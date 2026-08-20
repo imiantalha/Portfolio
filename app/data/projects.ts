@@ -199,3 +199,64 @@ export const ems = {
 
   liveUrl: "https://ems.mindblaze.net/",
 };
+
+export const pakRailways = {
+  number: "04",
+  title: "Pak Railways Tender Workflow Management System",
+  category: "Tender & Workflow Management",
+
+  description:
+    "An enterprise workflow management system for handling tender-related data, bid management, shipments, and filtered reporting workflows.",
+
+  technologies: [
+    "Laravel",
+    "MySQL",
+    "Algolia",
+    "REST APIs",
+    "DataTables",
+    "Excel Export",
+  ],
+
+  contributions: [
+    "A–T data search",
+    "Algolia-based search",
+    "Bid management",
+    "Shipment management",
+    "Advanced filtering",
+    "Reports",
+    "XLS export",
+    "CRUD workflows",
+  ],
+
+  architecture: {
+    title: "Search-driven enterprise workflow",
+    description:
+      "Built and improved an existing enterprise workflow system with searchable tender data, bid and shipment management, and report generation with multiple filtering options.",
+    results: [
+      "Category-based A–Z data search",
+      "Algolia-powered search",
+      "Bid management workflows",
+      "Shipment management",
+      "Filtered reporting with XLS export",
+    ],
+  },
+
+  gallery: [
+    {
+      src: "/images/pak-railways/dashboard.png",
+      alt: "Pak Railways tender dashboard with A-T search",
+    },
+    {
+      src: "/images/pak-railways/bids.png",
+      alt: "Pak Railways bid management list",
+    },
+    {
+      src: "/images/pak-railways/shipments.png",
+      alt: "Pak Railways shipment management",
+    },
+    {
+      src: "/images/pak-railways/reports.png",
+      alt: "Pak Railways filtered reports with XLS export",
+    },
+  ],
+};
