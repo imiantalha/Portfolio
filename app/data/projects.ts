@@ -77,3 +77,64 @@ export const mallshark = {
     },
   ],
 };
+
+export const textileSouk = {
+  number: "02",
+  title: "Textile Souk",
+  category: "B2B Textile Marketplace",
+
+  description:
+    "A B2B textile marketplace connecting customers with textile products while supporting orders, enquiries, shipments, cargo management, inventory, and business workflows.",
+
+  technologies: [
+    "Laravel",
+    "MySQL",
+    "SQL Server",
+    "REST APIs",
+    "Firebase",
+  ],
+
+  contributions: [
+    "Orders & enquiries",
+    "Product management",
+    "Shipment workflows",
+    "Cargo management",
+    "Inventory integration",
+    "REST APIs",
+    "Firebase notifications",
+    "Analytics",
+  ],
+
+  architecture: {
+    title: "Multi-database business integration",
+    description:
+      "The platform uses MySQL for application data such as users and orders while integrating with an external SQL Server system for stock and customer information.",
+    results: [
+      "MySQL for orders and users",
+      "SQL Server integration for stock and customers",
+      "Integrated shipment workflows",
+      "Business data synchronized across systems",
+    ],
+  },
+
+  gallery: [
+    {
+      src: "/images/textile-souk/dashboard.png",
+      alt: "Textile Souk dashboard",
+    },
+    {
+      src: "/images/textile-souk/products.png",
+      alt: "Textile Souk products interface",
+    },
+    {
+      src: "/images/textile-souk/brands.png",
+      alt: "Textile Souk Brands",
+    },
+    {
+      src: "/images/textile-souk/stock.png",
+      alt: "Textile Souk stock management",
+    },
+  ],
+
+  liveUrl: "https://admin.textilesouk.com/",
+};
