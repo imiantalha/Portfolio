@@ -1,60 +1,60 @@
 const skillGroups = [
   {
     title: "Backend",
-    description:
-      "Building APIs, business logic, integrations, and production backend systems.",
     skills: [
       "PHP",
       "Laravel",
       "REST APIs",
-      "MVC",
-      "Service / Repository Pattern",
-      "SOLID",
-      "Authentication",
-      "RBAC",
+      "MySQL",
+      "PostgreSQL",
+      "SQL Server",
     ],
   },
   {
     title: "Frontend",
-    description:
-      "Building responsive application interfaces and connecting them with backend APIs.",
     skills: [
       "React",
       "Next.js",
       "JavaScript",
       "Vite",
       "Blade",
-      "HTML",
-      "CSS",
     ],
   },
   {
-    title: "Databases & Search",
-    description:
-      "Working with relational databases, external data sources, and application search.",
+    title: "Architecture & Engineering",
     skills: [
-      "MySQL",
-      "PostgreSQL",
-      "SQL Server",
-      "Algolia",
-      "Meilisearch",
+      "RESTful APIs",
+      "RBAC",
+      "Queues & Jobs",
+      "Caching",
+      "Authentication",
+      "Database Integration",
+      "Webhooks",
     ],
   },
   {
-    title: "Integrations & Infrastructure",
-    description:
-      "Connecting applications with external services and asynchronous workflows.",
+    title: "Integrations & Services",
     skills: [
       "Stripe",
       "PayPal",
       "Crypto.com",
       "Firebase",
-      "Queues",
-      "Jobs",
-      "Webhooks",
-      "Scheduler",
+      "Shipping APIs",
+      "Search",
     ],
   },
+  {
+    title: "Tools",
+    skills: [
+      "Git",
+      "Bitbucket",
+      "Postman",
+    ],
+  },
+];
+
+const exploring = [
+  "Docker",
 ];
 
 export default function Skills() {
@@ -70,41 +70,63 @@ export default function Skills() {
           </p>
 
           <h2 className="mt-5 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-            Tools and technologies I work with.
+            Tools and technologies I use to build production systems.
           </h2>
 
           <p className="mt-6 text-base leading-7 text-neutral-400">
-            A practical stack built through production development across
-            e-commerce, B2B, HR, and enterprise applications.
+            My experience spans backend engineering, full-stack development,
+            APIs, databases, integrations, and the infrastructure behind
+            production applications.
           </p>
         </div>
 
-        <div className="mt-16 grid gap-px overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-800 md:grid-cols-2">
+        <div className="mt-14 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
           {skillGroups.map((group) => (
-            <article
+            <div
               key={group.title}
-              className="bg-[#0a0a0a] p-8 sm:p-10"
+              className="rounded-2xl border border-neutral-800 bg-neutral-950 p-6 transition-colors hover:border-neutral-700"
             >
-              <h3 className="text-xl font-semibold text-white">
+              <h3 className="text-sm font-semibold uppercase tracking-[0.12em] text-white">
                 {group.title}
               </h3>
 
-              <p className="mt-3 text-sm leading-6 text-neutral-500">
-                {group.description}
-              </p>
-
-              <div className="mt-7 flex flex-wrap gap-2">
+              <div className="mt-5 flex flex-wrap gap-2">
                 {group.skills.map((skill) => (
                   <span
                     key={skill}
-                    className="rounded-full border border-neutral-800 px-3 py-1.5 text-xs text-neutral-400"
+                    className="rounded-full border border-neutral-800 bg-neutral-900 px-3 py-1.5 text-xs text-neutral-400"
                   >
                     {skill}
                   </span>
                 ))}
               </div>
-            </article>
+            </div>
           ))}
+        </div>
+
+        <div className="mt-5 rounded-2xl border border-neutral-800 bg-neutral-950 p-6">
+          <div className="flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <h3 className="text-sm font-semibold uppercase tracking-[0.12em] text-white">
+                Currently Exploring
+              </h3>
+
+              <p className="mt-2 text-sm text-neutral-600">
+                Expanding my infrastructure and deployment knowledge.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap gap-2">
+              {exploring.map((skill) => (
+                <span
+                  key={skill}
+                  className="rounded-full border border-blue-500/30 bg-blue-500/5 px-4 py-2 text-sm text-blue-400"
+                >
+                  {skill}
+                </span>
+              ))}
+            </div>
+          </div>
         </div>
       </div>
     </section>

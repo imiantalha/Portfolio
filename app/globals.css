@@ -24,18 +24,45 @@ html {
   scroll-behavior: smooth;
 }
 
-section {
-  scroll-margin-top: 80px;
-}
-
 body {
   margin: 0;
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-inter), sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+section {
+  scroll-margin-top: 80px;
+}
+
+a {
+  text-decoration: none;
+}
+
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
 }
 
 ::selection {
   background: var(--accent);
   color: white;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--background);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #262626;
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #404040;
 }
