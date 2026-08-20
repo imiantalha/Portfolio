@@ -53,7 +53,7 @@ const skillGroups = [
 
 export default function Skills() {
   return (
-    <section className="border-t border-neutral-800 py-24 sm:py-32">
+    <section id="skills" className="border-t border-neutral-800 py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="max-w-2xl">
           <p className="text-sm font-medium uppercase tracking-[0.25em] text-blue-500">

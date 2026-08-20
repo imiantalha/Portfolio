@@ -1,5 +1,6 @@
-const navigation = [
+const navItems = [
   { label: "About", href: "#about" },
+  { label: "Skills", href: "#skills" },
   { label: "Work", href: "#work" },
   { label: "Experience", href: "#experience" },
   { label: "Contact", href: "#contact" },
@@ -17,7 +18,7 @@ export default function Navbar() {
         </a>
 
         <div className="hidden items-center gap-8 md:flex">
-          {navigation.map((item) => (
+          {navItems.map((item) => (
             <a
               key={item.href}
               href={item.href}
