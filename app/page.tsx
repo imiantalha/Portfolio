@@ -2,6 +2,7 @@ import Hero from "./components/Hero";
 import About from "./components/About";
 import Navbar from "./components/Navbar";
 import Metrics from "./components/Metrics";
+import Skills from "./components/Skills";
 
 export default function Home() {
   return (
@@ -12,6 +13,7 @@ export default function Home() {
         <Hero />
         <Metrics />
         <About />
+        <Skills />
       </main>
     </>
   );
