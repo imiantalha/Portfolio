@@ -30,7 +30,7 @@ export const mallshark = {
     "MySQL",
     "REST APIs",
     "Meilisearch",
-    "Queues",
+    "Event Listeners",
     "Sanctum",
   ],
 
@@ -257,6 +257,65 @@ export const pakRailways = {
     {
       src: "/images/pak-railways/reports.png",
       alt: "Pak Railways filtered reports with XLS export",
+    },
+  ],
+};
+
+export const doorToDoor = {
+  number: "05",
+  title: "Door to Door",
+  category: "Single-Vendor E-commerce Platform",
+
+  description:
+    "A Canada-focused single-vendor e-commerce platform built around product browsing, category-based filtering, authentication, and online shopping workflows.",
+
+  technologies: [
+    "Laravel",
+    "Blade",
+    "MySQL",
+    "REST APIs",
+    "Queues",
+  ],
+
+  contributions: [
+    "Product management",
+    "Category filtering",
+    "Product listing",
+    "Authentication",
+    "E-commerce workflows",
+    "Backend development",
+    "Blade frontend",
+  ],
+
+  architecture: {
+    title: "Single-vendor e-commerce implementation",
+    description:
+      "A single-vendor implementation following a similar e-commerce foundation to Mallshark, adapted specifically for the Canadian market.",
+    results: [
+      "Single-vendor architecture",
+      "Canada-focused implementation",
+      "Blade-based frontend",
+      "Category and product filtering",
+      "Integrated e-commerce workflows",
+    ],
+  },
+
+  gallery: [
+    {
+      src: "/images/door-to-door/home.png",
+      alt: "Door to Door home page",
+    },
+    {
+      src: "/images/door-to-door/login.png",
+      alt: "Door to Door login page",
+    },
+    {
+      src: "/images/door-to-door/products.png",
+      alt: "Door to Door products listing",
+    },
+    {
+      src: "/images/door-to-door/filters.png",
+      alt: "Door to Door category and product filters",
     },
   ],
 };
