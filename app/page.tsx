@@ -1,8 +1,18 @@
+import Hero from "./components/Hero";
+import About from "./components/About";
+import Navbar from "./components/Navbar";
+import Metrics from "./components/Metrics";
+
 export default function Home() {
   return (
-    <main>
-      <h1> Muhammad Talha</h1>
-      <p>Software Engineer . PHP / Laravel & Full-Stack</p>
-    </main>
+    <>
+      <Navbar />
+
+      <main>
+        <Hero />
+        <Metrics />
+        <About />
+      </main>
+    </>
   );
 }
