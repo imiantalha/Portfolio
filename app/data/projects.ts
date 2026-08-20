@@ -138,3 +138,64 @@ export const textileSouk = {
 
   liveUrl: "https://admin.textilesouk.com/",
 };
+
+export const ems = {
+  number: "03",
+  title: "Employee Management System",
+  category: "HR & Employee Management Platform",
+
+  description:
+    "An internal employee management platform supporting attendance, leave management, role-based access control, and business workflows through a Laravel API and Next.js frontend.",
+
+  technologies: [
+    "Laravel",
+    "Next.js",
+    "React",
+    "REST APIs",
+    "RBAC",
+  ],
+
+  contributions: [
+    "Attendance management",
+    "Leave management",
+    "Role-based access control",
+    "REST API integration",
+    "Next.js UI",
+    "Existing system improvements",
+    "CRUD workflows",
+  ],
+
+  architecture: {
+    title: "API-driven full-stack application",
+    description:
+      "Worked across the backend APIs and frontend interface, connecting business workflows from Laravel APIs to a Next.js application.",
+    results: [
+      "Laravel REST APIs",
+      "Next.js frontend",
+      "Role-based access control",
+      "Integrated attendance workflows",
+      "Integrated leave workflows",
+    ],
+  },
+
+  gallery: [
+    {
+      src: "/images/ems/dashboard.png",
+      alt: "Employee Management System dashboard",
+    },
+    {
+      src: "/images/ems/leaves.png",
+      alt: "Employee Management System leave management",
+    },
+    {
+      src: "/images/ems/calendar.png",
+      alt: "Employee Management System calendar",
+    },
+    {
+      src: "/images/ems/wfh.png",
+      alt: "Employee Management System work from home management",
+    },
+  ],
+
+  liveUrl: "https://ems.mindblaze.net/",
+};

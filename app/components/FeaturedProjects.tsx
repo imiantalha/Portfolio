@@ -1,5 +1,5 @@
 import ProjectCaseStudy from "./ProjectCaseStudy";
-import { mallshark, textileSouk } from "../data/projects";
+import { mallshark, textileSouk, ems } from "../data/projects";
 
 export default function FeaturedProjects() {
   return (
@@ -23,6 +23,7 @@ export default function FeaturedProjects() {
         <div className="mt-16 space-y-16">
           <ProjectCaseStudy project={mallshark} />
           <ProjectCaseStudy project={textileSouk} />
+          <ProjectCaseStudy project={ems} />
         </div>
       </div>
     </section>
