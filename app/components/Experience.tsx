@@ -5,13 +5,14 @@ const experiences = [
     company: "MindBlaze Technologies",
     location: "Lahore, Pakistan",
     description:
-      "Working on production web applications and business systems across e-commerce, B2B marketplaces, HR platforms, and enterprise workflows.",
+      "Working on production software across e-commerce, B2B marketplaces, HR platforms, and enterprise workflow systems, with a focus on backend engineering and full-stack delivery.",
     highlights: [
-      "Develop and maintain PHP/Laravel applications and REST APIs.",
-      "Build and integrate frontend interfaces using React and Next.js.",
-      "Work on payment, shipping, search, notification, and third-party integrations.",
-      "Develop background jobs, queues, scheduled processes, and reporting workflows.",
-      "Communicate with clients to understand requirements and deliver production solutions.",
+      "Build and maintain PHP/Laravel applications and REST APIs for production systems.",
+      "Develop frontend functionality using React, Next.js, and Blade based on project requirements.",
+      "Implement payment, shipping, search, notification, and other third-party integrations.",
+      "Build queues, background jobs, scheduled processes, and reporting workflows for asynchronous and recurring operations.",
+      "Work with MySQL and external database systems to support business and integration workflows.",
+      "Collaborate with clients to understand requirements, translate business workflows into technical solutions, and deliver production features.",
     ],
   },
   {
@@ -20,11 +21,13 @@ const experiences = [
     company: "6th Sense Technologies",
     location: "Hybrid",
     description:
-      "Contributed to application development across backend systems, APIs, database workflows, and business functionality.",
+      "Contributed to the development and maintenance of web applications, building practical experience across backend development, APIs, databases, and business logic.",
     highlights: [
-      "Developed and maintained web applications using PHP and Laravel.",
-      "Worked with REST APIs, databases, and application business logic.",
-      "Implemented and improved features based on project requirements.",
+      "Developed and maintained PHP/Laravel applications and backend functionality.",
+      "Built REST APIs and implemented application business logic.",
+      "Worked with relational databases and data-driven application workflows.",
+      "Implemented features and improvements based on project requirements.",
+      "Collaborated within development workflows to test, refine, and deliver application functionality.",
     ],
   },
   {
@@ -33,11 +36,12 @@ const experiences = [
     company: "6th Sense Technologies",
     location: "Hybrid",
     description:
-      "Started my professional software engineering career working with PHP and Laravel.",
+      "Started my professional software engineering career by working with PHP and Laravel on real application development.",
     highlights: [
       "Developed backend functionality using PHP and Laravel.",
-      "Worked with databases and application workflows.",
-      "Contributed to real project development while building professional engineering experience.",
+      "Worked with databases, models, and application workflows.",
+      "Implemented features under project requirements and development guidance.",
+      "Built practical experience working with real-world software projects and professional development workflows.",
     ],
   },
 ];
@@ -49,18 +53,19 @@ export default function Experience() {
       className="border-t border-neutral-800 py-24 sm:py-32"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="max-w-2xl">
+        <div className="max-w-3xl">
           <p className="text-sm font-medium uppercase tracking-[0.25em] text-blue-500">
             Experience
           </p>
 
           <h2 className="mt-5 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-            Growing through real-world software engineering.
+            From learning Laravel to building production systems.
           </h2>
 
           <p className="mt-6 text-base leading-7 text-neutral-400">
-            Experience spanning professional development, production systems,
-            client communication, and end-to-end project delivery.
+            My experience has grown from backend development with PHP and
+            Laravel into production engineering across APIs, integrations,
+            business workflows, and full-stack applications.
           </p>
         </div>
 
@@ -97,14 +102,14 @@ export default function Experience() {
                   {experience.description}
                 </p>
 
-                <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+                <ul className="mt-7 grid gap-3 sm:grid-cols-2">
                   {experience.highlights.map((highlight) => (
                     <li
                       key={highlight}
                       className="flex gap-3 text-sm leading-6 text-neutral-500"
                     >
                       <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-neutral-600" />
-                      {highlight}
+                      <span>{highlight}</span>
                     </li>
                   ))}
                 </ul>

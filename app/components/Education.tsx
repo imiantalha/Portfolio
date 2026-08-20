@@ -12,28 +12,34 @@ export default function Education() {
             </p>
 
             <h2 className="mt-5 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-              Academic foundation in computer science.
+              Foundation in computer science.
             </h2>
           </div>
 
-          <div className="border-t border-neutral-800 pt-8">
-            <p className="text-sm text-neutral-500">
-              Bachelor of Science
-            </p>
+          <div>
+            <div className="border-t border-neutral-800 pt-7">
+              <div className="flex flex-col justify-between gap-2 sm:flex-row">
+                <div>
+                  <h3 className="text-xl font-semibold text-white">
+                    Bachelor of Science in Computer Science
+                  </h3>
 
-            <h3 className="mt-3 text-2xl font-semibold text-white">
-              Bachelor of Science in Computer Science
-            </h3>
+                  <p className="mt-2 text-sm text-blue-400">
+                    Virtual University of Pakistan
+                  </p>
+                </div>
 
-            <p className="mt-2 text-sm text-blue-400">
-              Virtual University of Pakistan
-            </p>
+                <span className="text-sm text-neutral-600">
+                  Computer Science
+                </span>
+              </div>
 
-            <p className="mt-5 max-w-2xl text-sm leading-7 text-neutral-400">
-              A computer science foundation supporting my professional work
-              across software engineering, backend development, databases,
-              APIs, and full-stack application development.
-            </p>
+              <p className="mt-5 max-w-2xl text-sm leading-7 text-neutral-500">
+                Academic foundation covering computer science concepts,
+                software development, databases, algorithms, and
+                problem-solving.
+              </p>
+            </div>
           </div>
         </div>
       </div>

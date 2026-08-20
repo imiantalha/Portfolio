@@ -38,10 +38,10 @@ section {
 
 a {
   text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
-button,
-a {
+button {
   -webkit-tap-highlight-color: transparent;
 }
 

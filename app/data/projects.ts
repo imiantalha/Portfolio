@@ -15,6 +15,11 @@ export type Project = {
     description: string;
     results: string[];
   };
+  challenges?: {
+    title: string;
+    description: string;
+    approach: string[];
+  }[];
   gallery: ProjectImage[];
 };
 
@@ -73,6 +78,39 @@ export const mallshark: Project = {
       "MySQL for core application data linked with MS SQL for stock and customer data",
     ],
   },
+
+  challenges: [
+    {
+      title: "Search infrastructure",
+      description:
+        "The platform used Algolia for product search. As search usage grew, recurring cost and dependency on an external search service became important infrastructure considerations.",
+      approach: [
+        "Evaluated a self-hosted Meilisearch approach",
+        "Considered infrastructure ownership and recurring search costs",
+        "Planned search capabilities around the existing product catalogue",
+      ],
+    },
+    {
+      title: "Multi-database integration",
+      description:
+        "The application used MySQL for core application data while integrating with an external MS SQL system for stock and customer information.",
+      approach: [
+        "Connected application workflows across database systems",
+        "Handled stock and customer data integration",
+        "Worked around differences between application and external business data",
+      ],
+    },
+    {
+      title: "High-volume processing",
+      description:
+        "Several marketplace workflows required background processing rather than performing large operations synchronously inside HTTP requests.",
+      approach: [
+        "Used queues and background jobs",
+        "Processed batch operations asynchronously",
+        "Separated long-running work from user-facing requests",
+      ],
+    },
+  ],
 
   gallery: [
     {
