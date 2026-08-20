@@ -1,5 +1,5 @@
-import { Inter } from "next/font/google";
 import type { Metadata } from "next";
+import { Inter } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({
@@ -10,7 +10,8 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Muhammad Talha | Software Engineer",
   description:
-    "Portfolio of Muhammad Talha, a Software Engineer specializing in PHP, Laravel, React, and Next.js. Experienced in building production e-commerce, B2B, HR, and enterprise applications.",
+    "Muhammad Talha is a Software Engineer specializing in PHP, Laravel, React, and Next.js, with experience building production e-commerce, B2B, HR, and enterprise applications.",
+
   keywords: [
     "Muhammad Talha",
     "Software Engineer",
@@ -20,21 +21,26 @@ export const metadata: Metadata = {
     "Next.js Developer",
     "Full Stack Developer",
   ],
-  authors: [{ name: "Muhammad Talha" }],
+
+  authors: [
+    {
+      name: "Muhammad Talha",
+    },
+  ],
+
   creator: "Muhammad Talha",
+
   openGraph: {
     title: "Muhammad Talha | Software Engineer",
     description:
       "Software Engineer specializing in PHP, Laravel, React, and Next.js.",
     type: "website",
-    url: "https://github.com/imiantalha",
     siteName: "Muhammad Talha",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Muhammad Talha | Software Engineer",
-    description:
-      "Software Engineer specializing in PHP, Laravel, React, and Next.js.",
+
+  robots: {
+    index: true,
+    follow: true,
   },
 };
 
