@@ -1,17 +1,19 @@
 import Link from "next/link";
 import ProjectCard from "../components/ProjectCard";
 import {
-  doorToDoor,
+  mallshark,
+  textileSouk,
   ems,
-  // frescoCanada,
   pakRailways,
+  doorToDoor,
 } from "../data/projects";
 
 const projects = [
-  doorToDoor,
-  // frescoCanada,
+  mallshark,
+  textileSouk,
   ems,
   pakRailways,
+  doorToDoor,
 ];
 
 export default function ProjectsPage() {

@@ -1,62 +1,54 @@
 export const mallshark = {
   number: "01",
   title: "Mallshark",
-  category: "Multi-Vendor E-commerce Platform",
+  category: "Multi-Vendor E-commerce Marketplace",
 
   description:
-    "A production multi-vendor e-commerce platform supporting large-scale customer, vendor, product, order, payment, shipping, and search workflows.",
-
-  metrics: [
-    {
-      value: "1M+",
-      label: "Customers",
-    },
-    {
-      value: "200+",
-      label: "Vendors",
-    },
-    {
-      value: "6K+",
-      label: "Products",
-    },
-    {
-      value: "Thousands",
-      label: "Orders",
-    },
-  ],
+    "A production multi-vendor e-commerce marketplace supporting vendors, customers, products, orders, shipping, payments, search, analytics, and mobile-facing APIs.",
 
   technologies: [
     "Laravel",
+    "PHP",
     "MySQL",
     "REST APIs",
+    "Algolia",
     "Meilisearch",
-    "Event Listeners",
-    "Sanctum",
-  ],
-
-  contributions: [
-    "Order processing",
-    "Shipping",
-    "Mobile APIs",
     "Stripe",
     "PayPal",
     "Crypto.com",
-    "Search",
-    "Queued batch updates",
+    "Queues",
+    "Webhooks",
   ],
 
-  highlight: {
-    title: "Algolia → Self-hosted Meilisearch",
+  contributions: [
+    "Multi-vendor marketplace workflows",
+    "Product and order management",
+    "Order processing",
+    "Shipping integrations",
+    "Batch updates using queues",
+    "Mobile-facing APIs",
+    "Payment integrations",
+    "Search implementation",
+    "Analytics",
+    "Notifications",
+    "Background jobs",
+  ],
+
+  architecture: {
+    title: "Production-scale multi-vendor marketplace",
     description:
-      "Migrated production search to self-hosted Meilisearch to reduce third-party dependency, increase infrastructure ownership, and save $100+ per month in search costs.",
+      "Worked across core marketplace workflows and integrations, including order processing, shipping, payments, search, background processing, analytics, and APIs serving large application workloads.",
     results: [
-      "$100+ monthly cost saving",
-      "Reduced third-party dependency",
-      "Greater infrastructure ownership",
+      "200+ vendors supported",
+      "1M+ customers",
+      "Thousands of orders",
+      "Large production database",
+      "Mobile-facing APIs",
+      "Multiple warehouse inventory workflows",
+      "Customer and origin-based pricing",
+      "MySQL integrated with external MS SQL data",
     ],
   },
-
-  liveUrl: "https://mallshark.com/",
 
   gallery: [
     {

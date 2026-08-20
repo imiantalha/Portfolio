@@ -1,37 +1,21 @@
-import ProjectGallery from "./ProjectGallery";
-
-type ProjectMetric = {
-  value: string;
-  label: string;
-};
-
-type ProjectHighlight = {
-  title: string;
-  description: string;
-  results: string[];
-};
-
-type ProjectArchitecture = {
-  title: string;
-  description: string;
-  results: string[];
-};
+import Image from "next/image";
 
 type Project = {
   number: string;
   title: string;
   category: string;
   description: string;
-  metrics?: ProjectMetric[];
   technologies: string[];
   contributions: string[];
+  architecture?: {
+    title: string;
+    description: string;
+    results: string[];
+  };
   gallery: {
     src: string;
     alt: string;
   }[];
-  highlight?: ProjectHighlight;
-  architecture?: ProjectArchitecture;
-  liveUrl?: string;
 };
 
 type ProjectCaseStudyProps = {
@@ -43,148 +27,116 @@ export default function ProjectCaseStudy({
 }: ProjectCaseStudyProps) {
   return (
     <article className="overflow-hidden rounded-3xl border border-neutral-800 bg-neutral-950">
+      {/* Header */}
       <div className="p-8 sm:p-10 lg:p-12">
-        <div className="flex flex-col gap-8 lg:flex-row lg:items-end lg:justify-between">
-          <div>
-            <p className="text-sm font-medium text-blue-500">
-              {project.number} / {project.title}
-            </p>
+        <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
+          <span className="text-sm font-medium text-blue-500">
+            {project.number}
+          </span>
 
-            <h3 className="mt-3 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-              {project.category}
-            </h3>
-
-            <p className="mt-5 max-w-2xl text-base leading-7 text-neutral-400">
-              {project.description}
-            </p>
-          </div>
-
-          {project.liveUrl && (
-            <a
-              href={project.liveUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="shrink-0 text-sm font-medium text-white transition-colors hover:text-blue-400"
-            >
-              Visit Project →
-            </a>
-          )}
+          <span className="text-xs uppercase tracking-[0.15em] text-neutral-600">
+            {project.category}
+          </span>
         </div>
 
-        {project.metrics && (
-          <div className="mt-10 grid grid-cols-2 gap-px overflow-hidden rounded-xl border border-neutral-800 bg-neutral-800 sm:grid-cols-4">
-            {project.metrics.map((metric) => (
-              <div
-                key={metric.label}
-                className="bg-neutral-950 p-5"
-              >
-                <p className="text-2xl font-semibold text-white">
-                  {metric.value}
-                </p>
+        <h3 className="mt-5 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
+          {project.title}
+        </h3>
 
-                <p className="mt-1 text-xs text-neutral-500">
-                  {metric.label}
-                </p>
-              </div>
-            ))}
-          </div>
-        )}
+        <p className="mt-5 max-w-3xl text-base leading-7 text-neutral-400">
+          {project.description}
+        </p>
+
+        {/* Technologies */}
+        <div className="mt-7 flex flex-wrap gap-2">
+          {project.technologies.map((technology) => (
+            <span
+              key={technology}
+              className="rounded-full border border-neutral-800 px-3 py-1.5 text-xs text-neutral-500"
+            >
+              {technology}
+            </span>
+          ))}
+        </div>
       </div>
 
-      <div className="border-y border-neutral-800 bg-neutral-900 p-4 sm:p-6">
-        <ProjectGallery images={project.gallery} />
-      </div>
+      {/* Architecture / Engineering */}
+      {project.architecture && (
+        <div className="border-y border-neutral-800 bg-[#0b0b0b] p-8 sm:p-10 lg:p-12">
+          <div className="grid gap-10 lg:grid-cols-[0.8fr_1.2fr]">
+            <div>
+              <p className="text-xs font-medium uppercase tracking-[0.2em] text-blue-500">
+                Engineering
+              </p>
 
-      <div className="grid gap-12 p-8 sm:p-10 lg:grid-cols-2 lg:p-12">
-        <div>
-          <p className="text-sm font-medium uppercase tracking-[0.2em] text-neutral-500">
-            My Contribution
-          </p>
+              <h4 className="mt-4 text-2xl font-semibold text-white">
+                {project.architecture.title}
+              </h4>
 
-          <div className="mt-6 flex flex-wrap gap-2">
-            {project.contributions.map((item) => (
-              <span
-                key={item}
-                className="rounded-full border border-neutral-800 px-3 py-2 text-sm text-neutral-300"
-              >
-                {item}
-              </span>
-            ))}
-          </div>
+              <p className="mt-4 text-sm leading-6 text-neutral-500">
+                {project.architecture.description}
+              </p>
+            </div>
 
-          <div className="mt-8">
-            <p className="text-sm font-medium uppercase tracking-[0.2em] text-neutral-500">
-              Technologies
-            </p>
+            <div>
+              <p className="text-xs font-medium uppercase tracking-[0.2em] text-neutral-600">
+                Highlights
+              </p>
 
-            <div className="mt-5 flex flex-wrap gap-2">
-              {project.technologies.map((technology) => (
-                <span
-                  key={technology}
-                  className="rounded-full bg-neutral-900 px-3 py-2 text-sm text-neutral-400"
-                >
-                  {technology}
-                </span>
-              ))}
+              <ul className="mt-5 space-y-3">
+                {project.architecture.results.map((result) => (
+                  <li
+                    key={result}
+                    className="flex gap-3 text-sm leading-6 text-neutral-400"
+                  >
+                    <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-blue-500" />
+                    {result}
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
+      )}
 
-        {project.architecture && (
-          <div>
-            <p className="text-sm font-medium uppercase tracking-[0.2em] text-neutral-500">
-              Engineering Highlight
-            </p>
+      {/* Contributions */}
+      <div className="p-8 sm:p-10 lg:p-12">
+        <div>
+          <p className="text-xs font-medium uppercase tracking-[0.2em] text-neutral-600">
+            My Contribution
+          </p>
 
-            <h4 className="mt-4 text-xl font-semibold text-white">
-              {project.architecture.title}
-            </h4>
-
-            <p className="mt-4 text-sm leading-6 text-neutral-400">
-              {project.architecture.description}
-            </p>
-
-            <ul className="mt-5 space-y-2">
-              {project.architecture.results.map((result) => (
-                <li
-                  key={result}
-                  className="flex items-center gap-2 text-sm text-neutral-300"
-                >
-                  <span className="h-1.5 w-1.5 rounded-full bg-blue-500" />
-                  {result}
-                </li>
-              ))}
-            </ul>
+          <div className="mt-6 grid gap-x-10 gap-y-4 sm:grid-cols-2 lg:grid-cols-3">
+            {project.contributions.map((contribution) => (
+              <div
+                key={contribution}
+                className="border-l border-neutral-800 pl-4 text-sm text-neutral-400"
+              >
+                {contribution}
+              </div>
+            ))}
           </div>
-        )}
+        </div>
+      </div>
 
-        {project.highlight && (
-          <div>
-            <p className="text-sm font-medium uppercase tracking-[0.2em] text-neutral-500">
-              Engineering Highlight
-            </p>
-
-            <h4 className="mt-4 text-xl font-semibold text-white">
-              {project.highlight.title}
-            </h4>
-
-            <p className="mt-4 text-sm leading-6 text-neutral-400">
-              {project.highlight.description}
-            </p>
-
-            <ul className="mt-5 space-y-2">
-              {project.highlight.results.map((result) => (
-                <li
-                  key={result}
-                  className="flex items-center gap-2 text-sm text-neutral-300"
-                >
-                  <span className="h-1.5 w-1.5 rounded-full bg-blue-500" />
-                  {result}
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
+      {/* Gallery */}
+      <div className="border-t border-neutral-800 p-4 sm:p-6">
+        <div className="grid gap-4 md:grid-cols-2">
+          {project.gallery.map((image) => (
+            <div
+              key={image.src}
+              className="relative aspect-[16/10] overflow-hidden rounded-xl bg-neutral-900"
+            >
+              <Image
+                src={image.src}
+                alt={image.alt}
+                fill
+                className="object-cover object-top transition-transform duration-500 hover:scale-[1.02]"
+                sizes="(max-width: 768px) 100vw, 50vw"
+              />
+            </div>
+          ))}
+        </div>
       </div>
     </article>
   );
