@@ -3,6 +3,7 @@ import About from "./components/About";
 import Navbar from "./components/Navbar";
 import Metrics from "./components/Metrics";
 import Skills from "./components/Skills";
+import FeaturedProjects from "./components/FeaturedProjects";
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
         <Metrics />
         <About />
         <Skills />
+        <FeaturedProjects />
       </main>
     </>
   );
