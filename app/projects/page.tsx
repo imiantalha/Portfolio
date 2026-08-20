@@ -1,20 +1,6 @@
 import Link from "next/link";
 import ProjectCard from "../components/ProjectCard";
-import {
-  mallshark,
-  textileSouk,
-  ems,
-  pakRailways,
-  doorToDoor,
-} from "../data/projects";
-
-const projects = [
-  mallshark,
-  textileSouk,
-  ems,
-  pakRailways,
-  doorToDoor,
-];
+import { otherProjects } from "../data/projects";
 
 export default function ProjectsPage() {
   return (
@@ -29,22 +15,21 @@ export default function ProjectsPage() {
 
         <div className="mt-16 max-w-3xl">
           <p className="text-sm font-medium uppercase tracking-[0.25em] text-blue-500">
-            Selected Work
+            More Projects
           </p>
 
           <h1 className="mt-5 text-4xl font-semibold tracking-tight sm:text-6xl">
-            Projects I&apos;ve worked on.
+            Other production work.
           </h1>
 
           <p className="mt-6 text-base leading-7 text-neutral-400">
-            A collection of production applications and systems spanning
-            e-commerce, B2B marketplaces, HR platforms, and enterprise
-            workflow management.
+            Additional applications and systems I&apos;ve contributed to
+            across HR, enterprise workflows, and e-commerce.
           </p>
         </div>
 
-        <div className="mt-16 grid gap-5 md:grid-cols-2">
-          {projects.map((project) => (
+        <div className="mt-16 grid gap-6 md:grid-cols-2">
+          {otherProjects.map((project) => (
             <ProjectCard
               key={project.title}
               number={project.number}

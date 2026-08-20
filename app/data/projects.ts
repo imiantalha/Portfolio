@@ -1,21 +1,41 @@
-export const mallshark = {
+export type ProjectImage = {
+  src: string;
+  alt: string;
+};
+
+export type Project = {
+  number: string;
+  title: string;
+  category: string;
+  description: string;
+  technologies: string[];
+  contributions: string[];
+  architecture?: {
+    title: string;
+    description: string;
+    results: string[];
+  };
+  gallery: ProjectImage[];
+};
+
+export const mallshark: Project = {
   number: "01",
   title: "Mallshark",
   category: "Multi-Vendor E-commerce Marketplace",
 
   description:
-    "A production multi-vendor e-commerce marketplace supporting vendors, customers, products, orders, shipping, payments, search, analytics, and mobile-facing APIs.",
+    "A production multi-vendor e-commerce marketplace covering vendors, customers, products, orders, shipping, payments, search, analytics, notifications, and mobile-facing APIs.",
 
   technologies: [
-    "Laravel",
     "PHP",
+    "Laravel",
     "MySQL",
     "REST APIs",
-    "Algolia",
-    "Meilisearch",
     "Stripe",
     "PayPal",
     "Crypto.com",
+    "Algolia",
+    "Meilisearch",
     "Queues",
     "Webhooks",
   ],
@@ -25,87 +45,102 @@ export const mallshark = {
     "Product and order management",
     "Order processing",
     "Shipping integrations",
-    "Batch updates using queues",
+    "Queue-based batch updates",
     "Mobile-facing APIs",
-    "Payment integrations",
-    "Search implementation",
+    "Stripe, PayPal and Crypto.com integrations",
+    "Search and search optimization",
     "Analytics",
     "Notifications",
     "Background jobs",
+    "Multi-warehouse inventory workflows",
+    "Customer and origin-based pricing",
+    "MySQL and external MS SQL integration",
   ],
 
   architecture: {
-    title: "Production-scale multi-vendor marketplace",
+    title: "Production-scale marketplace engineering",
     description:
-      "Worked across core marketplace workflows and integrations, including order processing, shipping, payments, search, background processing, analytics, and APIs serving large application workloads.",
+      "Worked across core marketplace workflows and integrations, contributing to the development and delivery of a system handling large-scale customer, vendor, order, inventory and API workloads.",
+
     results: [
-      "200+ vendors supported",
+      "200+ vendors",
       "1M+ customers",
       "Thousands of orders",
       "Large production database",
-      "Mobile-facing APIs",
-      "Multiple warehouse inventory workflows",
+      "1M+ API users",
+      "Multiple warehouses across the Middle East",
       "Customer and origin-based pricing",
-      "MySQL integrated with external MS SQL data",
+      "MySQL for core application data linked with MS SQL for stock and customer data",
     ],
   },
 
+  // Keep the gallery paths you already have working.
   gallery: [
     {
       src: "/images/mallshark/explore.png",
-      alt: "Mallshark product exploration page",
+      alt: "Mallshark explore",
     },
     {
       src: "/images/mallshark/product.png",
-      alt: "Mallshark product detail page",
+      alt: "Mallshark products",
     },
     {
       src: "/images/mallshark/checkout.png",
-      alt: "Mallshark checkout and payment page",
+      alt: "Mallshark checkout",
     },
     {
       src: "/images/mallshark/seller-center.png",
-      alt: "Mallshark seller center dashboard",
+      alt: "Mallshark seller center",
     },
   ],
 };
 
-export const textileSouk = {
+export const textileSouk: Project = {
   number: "02",
   title: "Textile Souk",
   category: "B2B Textile Marketplace",
 
   description:
-    "A B2B textile marketplace connecting customers with textile products while supporting orders, enquiries, shipments, cargo management, inventory, and business workflows.",
+    "A B2B textile marketplace covering products, orders, enquiries, shipments, cargo management, notifications, analytics, and integrations with external business systems.",
 
   technologies: [
+    "PHP",
     "Laravel",
     "MySQL",
-    "SQL Server",
+    "MS SQL",
     "REST APIs",
     "Firebase",
+    "FCM",
+    "Queues",
+    "Notifications",
   ],
 
   contributions: [
-    "Orders & enquiries",
     "Product management",
-    "Shipment workflows",
+    "Order management",
+    "Enquiry workflows",
+    "Shipment management",
     "Cargo management",
-    "Inventory integration",
-    "REST APIs",
-    "Firebase notifications",
     "Analytics",
+    "REST APIs",
+    "Firebase push notifications",
+    "External database integration",
+    "Customer and stock data workflows",
   ],
 
   architecture: {
-    title: "Multi-database business integration",
+    title: "B2B marketplace with external data integration",
     description:
-      "The platform uses MySQL for application data such as users and orders while integrating with an external SQL Server system for stock and customer information.",
+      "Worked across marketplace workflows and integrations connecting application data with external stock and customer systems.",
+
     results: [
-      "MySQL for orders and users",
-      "SQL Server integration for stock and customers",
-      "Integrated shipment workflows",
-      "Business data synchronized across systems",
+      "B2B product and order workflows",
+      "Order and enquiry management",
+      "Shipment and cargo workflows",
+      "MySQL application data",
+      "MS SQL integration for external business data",
+      "Firebase push notifications",
+      "REST APIs for application clients",
     ],
   },
 
@@ -116,198 +151,191 @@ export const textileSouk = {
     },
     {
       src: "/images/textile-souk/products.png",
-      alt: "Textile Souk products interface",
+      alt: "Textile Souk products",
     },
     {
       src: "/images/textile-souk/brands.png",
-      alt: "Textile Souk Brands",
+      alt: "Textile Souk brands",
     },
     {
       src: "/images/textile-souk/stock.png",
-      alt: "Textile Souk stock management",
+      alt: "Textile Souk stock transfer",
     },
   ],
-
-  liveUrl: "https://admin.textilesouk.com/",
 };
 
-export const ems = {
+export const ems: Project = {
   number: "03",
   title: "Employee Management System",
-  category: "HR & Employee Management Platform",
+  category: "HR & Employee Management",
 
   description:
-    "An internal employee management platform supporting attendance, leave management, role-based access control, and business workflows through a Laravel API and Next.js frontend.",
+    "An employee management platform covering attendance, leave management, role-based access control, APIs, and a modern application interface.",
 
   technologies: [
     "Laravel",
+    "PHP",
     "Next.js",
     "React",
     "REST APIs",
     "RBAC",
+    "MySQL",
   ],
 
   contributions: [
     "Attendance management",
     "Leave management",
     "Role-based access control",
-    "REST API integration",
-    "Next.js UI",
-    "Existing system improvements",
-    "CRUD workflows",
+    "REST API development",
+    "API-to-UI integration",
+    "Frontend development",
+    "Client-facing workflows",
   ],
 
   architecture: {
-    title: "API-driven full-stack application",
+    title: "API-driven employee management platform",
     description:
-      "Worked across the backend APIs and frontend interface, connecting business workflows from Laravel APIs to a Next.js application.",
+      "Worked across backend APIs and the application interface to deliver employee management workflows from the API layer through to the user interface.",
+
     results: [
-      "Laravel REST APIs",
-      "Next.js frontend",
+      "Attendance management",
+      "Leave management",
       "Role-based access control",
-      "Integrated attendance workflows",
-      "Integrated leave workflows",
+      "REST APIs",
+      "API-to-UI integration",
     ],
   },
 
   gallery: [
     {
       src: "/images/ems/dashboard.png",
-      alt: "Employee Management System dashboard",
-    },
-    {
-      src: "/images/ems/leaves.png",
-      alt: "Employee Management System leave management",
-    },
-    {
-      src: "/images/ems/calendar.png",
-      alt: "Employee Management System calendar",
-    },
-    {
-      src: "/images/ems/wfh.png",
-      alt: "Employee Management System work from home management",
+      alt: "Employee management system dashboard",
     },
   ],
-
-  liveUrl: "https://ems.mindblaze.net/",
 };
 
-export const pakRailways = {
+export const pakRailways: Project = {
   number: "04",
   title: "Pak Railways Tender Workflow Management System",
-  category: "Tender & Workflow Management",
+  category: "Enterprise Workflow Management",
 
   description:
-    "An enterprise workflow management system for handling tender-related data, bid management, shipments, and filtered reporting workflows.",
+    "An enterprise tender workflow system covering tender search, bid management, shipments, reports, filtering, DataTables, and Excel-based reporting.",
 
   technologies: [
     "Laravel",
+    "PHP",
     "MySQL",
-    "Algolia",
     "REST APIs",
+    "Algolia",
     "DataTables",
     "Excel Export",
+    "RBAC",
   ],
 
   contributions: [
-    "A–T data search",
-    "Algolia-based search",
+    "Tender dashboard",
+    "A-T data search",
+    "Category-based search",
     "Bid management",
+    "Order history",
     "Shipment management",
-    "Advanced filtering",
     "Reports",
-    "XLS export",
+    "Advanced filters",
+    "DataTables",
+    "Excel exports",
     "CRUD workflows",
+    "UI improvements",
   ],
 
   architecture: {
     title: "Search-driven enterprise workflow",
     description:
-      "Built and improved an existing enterprise workflow system with searchable tender data, bid and shipment management, and report generation with multiple filtering options.",
+      "Worked on an existing enterprise system by implementing improvements across tender search, bid workflows, data tables, reporting and CRUD operations.",
+
     results: [
-      "Category-based A–Z data search",
-      "Algolia-powered search",
+      "Category-based A-T search",
       "Bid management workflows",
       "Shipment management",
-      "Filtered reporting with XLS export",
+      "Filtered reporting",
+      "Excel report exports",
+      "Search and CRUD workflows on the same page",
     ],
   },
 
   gallery: [
     {
       src: "/images/pak-railways/dashboard.png",
-      alt: "Pak Railways tender dashboard with A-T search",
-    },
-    {
-      src: "/images/pak-railways/bids.png",
-      alt: "Pak Railways bid management list",
-    },
-    {
-      src: "/images/pak-railways/shipments.png",
-      alt: "Pak Railways shipment management",
-    },
-    {
-      src: "/images/pak-railways/reports.png",
-      alt: "Pak Railways filtered reports with XLS export",
+      alt: "Pak Railways tender workflow dashboard",
     },
   ],
 };
 
-export const doorToDoor = {
+export const doorToDoor: Project = {
   number: "05",
-  title: "Door to Door",
-  category: "Single-Vendor E-commerce Platform",
+  title: "Door to Door / Fresco Canada",
+  category: "Canada-Focused Single-Vendor E-commerce",
 
   description:
-    "A Canada-focused single-vendor e-commerce platform built around product browsing, category-based filtering, authentication, and online shopping workflows.",
+    "A Canada-focused single-vendor e-commerce implementation covering the storefront, authentication, product browsing, categories, and filtered product discovery.",
 
   technologies: [
     "Laravel",
+    "PHP",
     "Blade",
     "MySQL",
     "REST APIs",
-    "Queues",
+    "E-commerce",
   ],
 
   contributions: [
-    "Product management",
-    "Category filtering",
-    "Product listing",
+    "Home/dashboard interface",
     "Authentication",
-    "E-commerce workflows",
-    "Backend development",
-    "Blade frontend",
+    "Product listing",
+    "Product categories",
+    "Sidebar category filters",
+    "Product browsing workflows",
+    "Backend integration",
   ],
 
   architecture: {
-    title: "Single-vendor e-commerce implementation",
+    title: "Single-vendor e-commerce platform",
     description:
-      "A single-vendor implementation following a similar e-commerce foundation to Mallshark, adapted specifically for the Canadian market.",
+      "A single-vendor implementation following the same core e-commerce pattern as Mallshark, adapted specifically for the Canadian market.",
+
     results: [
       "Single-vendor architecture",
-      "Canada-focused implementation",
       "Blade-based frontend",
-      "Category and product filtering",
-      "Integrated e-commerce workflows",
+      "Product catalogue",
+      "Category filtering",
+      "Authentication",
+      "Canada-focused implementation",
     ],
   },
 
   gallery: [
     {
       src: "/images/door-to-door/home.png",
-      alt: "Door to Door home page",
-    },
-    {
-      src: "/images/door-to-door/login.png",
-      alt: "Door to Door login page",
-    },
-    {
-      src: "/images/door-to-door/products.png",
-      alt: "Door to Door products listing",
-    },
-    {
-      src: "/images/door-to-door/filters.png",
-      alt: "Door to Door category and product filters",
+      alt: "Door to Door e-commerce homepage",
     },
   ],
 };
+
+export const featuredProjects: Project[] = [
+  mallshark,
+  textileSouk,
+];
+
+export const otherProjects: Project[] = [
+  ems,
+  pakRailways,
+  doorToDoor,
+];
+
+export const projects: Project[] = [
+  mallshark,
+  textileSouk,
+  ems,
+  pakRailways,
+  doorToDoor,
+];
