@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { mallshark } from "../data/projects";
+import ProjectGallery from "./ProjectGallery";
 
 export default function FeaturedProjects() {
   return (
@@ -70,17 +71,9 @@ export default function FeaturedProjects() {
           </div>
 
           {/* Screenshot */}
-          <div className="border-y border-neutral-800 bg-neutral-900 p-4 sm:p-6">
-            <div className="relative aspect-[16/9] overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-950">
-              <Image
-                src="/images/mallshark/explore.png"
-                alt="Mallshark e-commerce platform"
-                fill
-                className="object-cover object-top"
-                sizes="(max-width: 1280px) 100vw, 1200px"
-              />
-            </div>
-          </div>
+              <div className="border-y border-neutral-800 bg-neutral-900 p-4 sm:p-6">
+                <ProjectGallery images={mallshark.gallery} />
+              </div>
 
           {/* Contributions */}
           <div className="grid gap-12 p-8 sm:p-10 lg:grid-cols-2 lg:p-12">

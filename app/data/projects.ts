@@ -57,4 +57,23 @@ export const mallshark = {
   },
 
   liveUrl: "https://mallshark.com/",
+
+  gallery: [
+    {
+      src: "/images/mallshark/explore.png",
+      alt: "Mallshark product exploration page",
+    },
+    {
+      src: "/images/mallshark/product.png",
+      alt: "Mallshark product detail page",
+    },
+    {
+      src: "/images/mallshark/checkout.png",
+      alt: "Mallshark checkout and payment page",
+    },
+    {
+      src: "/images/mallshark/seller-center.png",
+      alt: "Mallshark seller center dashboard",
+    },
+  ],
 };
