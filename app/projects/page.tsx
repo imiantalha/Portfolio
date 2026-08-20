@@ -50,6 +50,7 @@ export default function ProjectsPage() {
               category={project.category}
               description={project.description}
               technologies={project.technologies}
+              image={project.gallery[0]}
             />
           ))}
         </div>
