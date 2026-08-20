@@ -1,23 +1,18 @@
-const strengths = [
+const recognition = [
   {
     title: "Performance Recognition",
     description:
-      "Recognized through a performance bonus and salary increment for professional contribution and performance.",
+      "Received recognition through performance-based compensation, including a performance bonus and increment.",
   },
   {
-    title: "Client Communication",
+    title: "Appreciated Contribution",
     description:
-      "Comfortable discussing requirements with clients and translating business needs into working software.",
+      "Recognized for contribution and reliability within professional project environments.",
   },
   {
-    title: "Continuous Learning",
+    title: "Continuous Learner",
     description:
-      "Strong learning mindset with a focus on continuously improving engineering skills and adopting new technologies.",
-  },
-  {
-    title: "End-to-End Ownership",
-    description:
-      "Experience taking features from requirements and implementation through testing, integration, and production delivery.",
+      "Consistently builds new technical capabilities by learning and applying modern tools and engineering practices.",
   },
 ];
 
@@ -27,26 +22,26 @@ export default function Recognition() {
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="max-w-2xl">
           <p className="text-sm font-medium uppercase tracking-[0.25em] text-blue-500">
-            Recognition & Strengths
+            Recognition
           </p>
 
           <h2 className="mt-5 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-            How I approach my work.
+            A few things I value professionally.
           </h2>
         </div>
 
-        <div className="mt-12 grid gap-px overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-800 md:grid-cols-2">
-          {strengths.map((strength) => (
+        <div className="mt-14 grid gap-5 md:grid-cols-3">
+          {recognition.map((item) => (
             <article
-              key={strength.title}
-              className="bg-[#0a0a0a] p-8"
+              key={item.title}
+              className="rounded-2xl border border-neutral-800 bg-neutral-950 p-7"
             >
-              <h3 className="text-lg font-medium text-white">
-                {strength.title}
+              <h3 className="text-lg font-semibold text-white">
+                {item.title}
               </h3>
 
-              <p className="mt-3 text-sm leading-6 text-neutral-500">
-                {strength.description}
+              <p className="mt-4 text-sm leading-6 text-neutral-500">
+                {item.description}
               </p>
             </article>
           ))}

@@ -5,7 +5,7 @@ import { mallshark, textileSouk } from "../data/projects";
 export default function FeaturedProjects() {
   return (
     <section
-      id="work"
+      id="projects"
       className="border-t border-neutral-800 py-24 sm:py-32"
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">

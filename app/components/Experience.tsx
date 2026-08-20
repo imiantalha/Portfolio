@@ -5,61 +5,39 @@ const experiences = [
     company: "MindBlaze Technologies",
     location: "Lahore, Pakistan",
     description:
-      "Working on production software across e-commerce, B2B marketplaces, HR platforms, and enterprise systems, with responsibilities spanning backend development, APIs, integrations, and client-facing delivery.",
+      "Working on production web applications and business systems across e-commerce, B2B marketplaces, HR platforms, and enterprise workflows.",
     highlights: [
-      "Work directly with clients to understand requirements and deliver production-ready solutions.",
-      "Contribute across the development lifecycle, from requirements and implementation to deployment and delivery.",
-      "Build and maintain Laravel applications, REST APIs, integrations, background jobs, and business workflows.",
-      "Work across e-commerce, B2B marketplace, HR, and enterprise workflow systems.",
-      "Develop frontend interfaces and API integrations using React and Next.js.",
-    ],
-    technologies: [
-      "Laravel",
-      "PHP",
-      "React",
-      "Next.js",
-      "MySQL",
-      "REST APIs",
+      "Develop and maintain PHP/Laravel applications and REST APIs.",
+      "Build and integrate frontend interfaces using React and Next.js.",
+      "Work on payment, shipping, search, notification, and third-party integrations.",
+      "Develop background jobs, queues, scheduled processes, and reporting workflows.",
+      "Communicate with clients to understand requirements and deliver production solutions.",
     ],
   },
   {
     period: "Jan 2024 — Sep 2024",
     role: "Junior Software Developer",
     company: "6th Sense Technologies",
-    location: "Lahore, Pakistan",
+    location: "Hybrid",
     description:
-      "Contributed to software development projects with a focus on Laravel, backend development, APIs, and business application workflows.",
+      "Contributed to application development across backend systems, APIs, database workflows, and business functionality.",
     highlights: [
-      "Developed and maintained Laravel-based applications.",
-      "Implemented backend features and REST APIs.",
-      "Worked with databases and application business logic.",
-      "Collaborated on feature development and production improvements.",
-    ],
-    technologies: [
-      "PHP",
-      "Laravel",
-      "MySQL",
-      "REST APIs",
+      "Developed and maintained web applications using PHP and Laravel.",
+      "Worked with REST APIs, databases, and application business logic.",
+      "Implemented and improved features based on project requirements.",
     ],
   },
   {
     period: "Sep 2023 — Dec 2023",
     role: "PHP / Laravel Developer Intern",
     company: "6th Sense Technologies",
-    location: "Lahore, Pakistan",
+    location: "Hybrid",
     description:
-      "Started my professional software engineering career working with PHP and Laravel in a production development environment.",
+      "Started my professional software engineering career working with PHP and Laravel.",
     highlights: [
       "Developed backend functionality using PHP and Laravel.",
-      "Worked with database-driven application features.",
-      "Learned production development workflows and software engineering practices.",
-      "Contributed to real-world application development under senior guidance.",
-    ],
-    technologies: [
-      "PHP",
-      "Laravel",
-      "MySQL",
-      "Git",
+      "Worked with databases and application workflows.",
+      "Contributed to real project development while building professional engineering experience.",
     ],
   },
 ];
@@ -77,69 +55,59 @@ export default function Experience() {
           </p>
 
           <h2 className="mt-5 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-            Growing from Laravel development into full-stack engineering.
+            Growing through real-world software engineering.
           </h2>
 
           <p className="mt-6 text-base leading-7 text-neutral-400">
-            A progression built through hands-on production work, increasing
-            ownership, and experience delivering software for real business
-            needs.
+            Experience spanning professional development, production systems,
+            client communication, and end-to-end project delivery.
           </p>
         </div>
 
         <div className="mt-16">
-          {experiences.map((experience, index) => (
+          {experiences.map((experience) => (
             <article
               key={`${experience.company}-${experience.period}`}
-              className="relative grid gap-8 border-t border-neutral-800 py-10 lg:grid-cols-[220px_1fr]"
+              className="grid gap-6 border-t border-neutral-800 py-10 lg:grid-cols-[180px_1fr]"
             >
               <div>
-                <p className="text-sm font-medium text-neutral-300">
+                <p className="text-sm text-neutral-500">
                   {experience.period}
-                </p>
-
-                <p className="mt-2 text-sm text-neutral-500">
-                  {experience.location}
                 </p>
               </div>
 
-              <div className="relative">
-                <div className="absolute -left-[29px] top-1 hidden h-3 w-3 rounded-full border-2 border-blue-500 bg-[#0a0a0a] lg:block" />
+              <div>
+                <div className="flex flex-col justify-between gap-2 sm:flex-row sm:items-start">
+                  <div>
+                    <h3 className="text-xl font-semibold text-white">
+                      {experience.role}
+                    </h3>
 
-                <p className="text-sm font-medium text-blue-500">
-                  {experience.company}
-                </p>
+                    <p className="mt-1 text-sm text-blue-400">
+                      {experience.company}
+                    </p>
+                  </div>
 
-                <h3 className="mt-2 text-2xl font-semibold tracking-tight text-white">
-                  {experience.role}
-                </h3>
+                  <span className="text-sm text-neutral-600">
+                    {experience.location}
+                  </span>
+                </div>
 
-                <p className="mt-5 max-w-3xl text-base leading-7 text-neutral-400">
+                <p className="mt-5 max-w-3xl text-sm leading-7 text-neutral-400">
                   {experience.description}
                 </p>
 
-                <ul className="mt-6 max-w-3xl space-y-3">
+                <ul className="mt-6 grid gap-3 sm:grid-cols-2">
                   {experience.highlights.map((highlight) => (
                     <li
                       key={highlight}
-                      className="flex gap-3 text-sm leading-6 text-neutral-400"
+                      className="flex gap-3 text-sm leading-6 text-neutral-500"
                     >
                       <span className="mt-2 h-1.5 w-1.5 shrink-0 rounded-full bg-neutral-600" />
                       {highlight}
                     </li>
                   ))}
                 </ul>
-
-                <div className="mt-7 flex flex-wrap gap-2">
-                  {experience.technologies.map((technology) => (
-                    <span
-                      key={technology}
-                      className="rounded-full border border-neutral-800 px-3 py-1.5 text-xs text-neutral-500"
-                    >
-                      {technology}
-                    </span>
-                  ))}
-                </div>
               </div>
             </article>
           ))}

@@ -74,7 +74,6 @@ export const mallshark: Project = {
     ],
   },
 
-  // Keep the gallery paths you already have working.
   gallery: [
     {
       src: "/images/mallshark/explore.png",
