@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const links = [
@@ -14,10 +15,14 @@ const links = [
 const sectionIds = links.map(({ href }) => href.slice(1));
 
 export default function Navbar() {
+  const pathname = usePathname();
+  const isHome = pathname === "/";
   const [open, setOpen] = useState(false);
   const [activeSection, setActiveSection] = useState("about");
 
   useEffect(() => {
+    if (!isHome) return;
+
     const sections = sectionIds
       .map((id) => document.getElementById(id))
       .filter((section): section is HTMLElement => section !== null);
@@ -28,11 +33,15 @@ export default function Navbar() {
       (entries) => {
         const visible = entries
           .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+          .sort((a, b) => {
+            const aDistance = Math.abs(a.boundingClientRect.top - 96);
+            const bDistance = Math.abs(b.boundingClientRect.top - 96);
+            return aDistance - bDistance;
+          })[0];
 
         if (visible) setActiveSection(visible.target.id);
       },
-      { rootMargin: "-88px 0px -55% 0px", threshold: [0.05, 0.2, 0.5] },
+      { rootMargin: "-96px 0px -52% 0px", threshold: [0, 0.15, 0.35] },
     );
 
     sections.forEach((section) => observer.observe(section));
@@ -44,50 +53,121 @@ export default function Navbar() {
 
     syncHash();
     window.addEventListener("hashchange", syncHash);
+
     return () => {
       observer.disconnect();
       window.removeEventListener("hashchange", syncHash);
     };
-  }, []);
+  }, [isHome]);
 
   const closeMenu = () => setOpen(false);
+  const getHref = (href: string) => (isHome ? href : `/${href}`);
+
+  const handleSectionClick = (sectionId: string) => {
+    if (isHome) setActiveSection(sectionId);
+    closeMenu();
+  };
 
   return (
     <header className="sticky top-0 z-50 border-b border-neutral-900 bg-[#0a0a0a]/90 backdrop-blur">
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8" aria-label="Main navigation">
-        <Link href="/" className="text-sm font-semibold tracking-tight text-white" onClick={closeMenu}>Muhammad Talha</Link>
+      <nav
+        className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8"
+        aria-label="Main navigation"
+      >
+        <Link
+          href="/"
+          className="text-sm font-semibold tracking-tight text-white"
+          onClick={closeMenu}
+        >
+          Muhammad Talha
+        </Link>
 
         <div className="hidden items-center gap-7 md:flex">
           {links.map((link) => {
             const sectionId = link.href.slice(1);
-            const isActive = activeSection === sectionId;
+            const isActive = isHome && activeSection === sectionId;
+
             return (
-              <Link key={link.href} href={link.href} aria-current={isActive ? "location" : undefined} className={`relative py-1 text-sm transition-colors duration-200 ${isActive ? "text-white" : "text-neutral-500 hover:text-white"}`}>
+              <Link
+                key={link.href}
+                href={getHref(link.href)}
+                onClick={() => handleSectionClick(sectionId)}
+                aria-current={isActive ? "location" : undefined}
+                className={`relative py-1 text-sm transition-colors duration-200 ${
+                  isActive ? "text-white" : "text-neutral-500 hover:text-white"
+                }`}
+              >
                 {link.label}
-                <span aria-hidden="true" className={`absolute -bottom-1 left-1/2 h-0.5 -translate-x-1/2 rounded-full bg-blue-500 transition-all duration-200 ${isActive ? "w-4 opacity-100" : "w-0 opacity-0"}`} />
+                <span
+                  aria-hidden="true"
+                  className={`absolute -bottom-1 left-1/2 h-0.5 -translate-x-1/2 rounded-full bg-blue-500 transition-all duration-200 ${
+                    isActive ? "w-4 opacity-100" : "w-0 opacity-0"
+                  }`}
+                />
               </Link>
             );
           })}
-          <a href="/Muhammad-Talha-CV.pdf" target="_blank" rel="noopener noreferrer" className="rounded-full border border-neutral-700 px-4 py-2 text-sm text-white transition-colors hover:border-neutral-500" aria-label="Open Muhammad Talha resume PDF in a new tab">Resume</a>
+
+          <a
+            href="/Muhammad-Talha-CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-full border border-neutral-700 px-4 py-2 text-sm text-white transition-colors hover:border-neutral-500"
+            aria-label="Open Muhammad Talha resume PDF in a new tab"
+          >
+            Resume
+          </a>
         </div>
 
-        <button type="button" onClick={() => setOpen((value) => !value)} aria-label={open ? "Close navigation menu" : "Open navigation menu"} aria-expanded={open} aria-controls="mobile-navigation" className="rounded-md px-2 py-1 text-xl leading-none text-neutral-400 transition-colors hover:text-white md:hidden">
+        <button
+          type="button"
+          onClick={() => setOpen((value) => !value)}
+          aria-label={open ? "Close navigation menu" : "Open navigation menu"}
+          aria-expanded={open}
+          aria-controls="mobile-navigation"
+          className="rounded-md px-2 py-1 text-xl leading-none text-neutral-400 transition-colors hover:text-white md:hidden"
+        >
           <span aria-hidden="true">{open ? "×" : "☰"}</span>
         </button>
       </nav>
 
-      <div id="mobile-navigation" hidden={!open} className="border-t border-neutral-900 px-6 py-5 md:hidden">
+      <div
+        id="mobile-navigation"
+        hidden={!open}
+        className="border-t border-neutral-900 px-6 py-5 md:hidden"
+      >
         <div className="flex flex-col gap-4">
           {links.map((link) => {
             const sectionId = link.href.slice(1);
-            const isActive = activeSection === sectionId;
+            const isActive = isHome && activeSection === sectionId;
+
             return (
-              <Link key={link.href} href={link.href} onClick={closeMenu} aria-current={isActive ? "location" : undefined} className={`border-l-2 pl-3 text-sm transition-colors ${isActive ? "border-blue-500 text-white" : "border-transparent text-neutral-400 hover:text-white"}`}>
+              <Link
+                key={link.href}
+                href={getHref(link.href)}
+                onClick={() => handleSectionClick(sectionId)}
+                aria-current={isActive ? "location" : undefined}
+                className={`border-l-2 pl-3 text-sm transition-colors ${
+                  isActive
+                    ? "border-blue-500 text-white"
+                    : "border-transparent text-neutral-400 hover:text-white"
+                }`}
+              >
                 {link.label}
               </Link>
             );
           })}
-          <a href="/Muhammad-Talha-CV.pdf" target="_blank" rel="noopener noreferrer" onClick={closeMenu} className="mt-2 inline-flex w-fit rounded-full border border-neutral-700 px-4 py-2 text-sm text-white" aria-label="Open Muhammad Talha resume PDF in a new tab">Resume</a>
+
+          <a
+            href="/Muhammad-Talha-CV.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            onClick={closeMenu}
+            className="mt-2 inline-flex w-fit rounded-full border border-neutral-700 px-4 py-2 text-sm text-white transition-colors hover:border-neutral-500"
+            aria-label="Open Muhammad Talha resume PDF in a new tab"
+          >
+            Resume
+          </a>
         </div>
       </div>
     </header>
