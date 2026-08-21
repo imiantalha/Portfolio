@@ -1,6 +1,6 @@
 import Link from "next/link";
 import ProjectCard from "../components/ProjectCard";
-import { otherProjects } from "../data/projects";
+import { projects } from "../data/projects";
 
 export default function ProjectsPage() {
   return (
@@ -13,23 +13,25 @@ export default function ProjectsPage() {
           ← Back to Home
         </Link>
 
-        <div className="mt-16 max-w-3xl">
+        <div className="mt-16 max-w-4xl">
           <p className="text-sm font-medium uppercase tracking-[0.25em] text-blue-500">
-            More Projects
+            Selected Work
           </p>
 
           <h1 className="mt-5 text-4xl font-semibold tracking-tight sm:text-6xl">
-            Other production work.
+            Production systems I&apos;ve contributed to.
           </h1>
 
-          <p className="mt-6 text-base leading-7 text-neutral-400">
-            Additional applications and systems I&apos;ve contributed to
-            across HR, enterprise workflows, and e-commerce.
+          <p className="mt-6 max-w-3xl text-base leading-7 text-neutral-400">
+            A selection of production applications across e-commerce, B2B
+            marketplaces, HR platforms, and enterprise workflow systems.
+            My work spans backend engineering, APIs, integrations, business
+            workflows, and application delivery.
           </p>
         </div>
 
-        <div className="mt-16 grid gap-6 md:grid-cols-2">
-          {otherProjects.map((project) => (
+        <div className="mt-20 space-y-10">
+          {projects.map((project) => (
             <ProjectCard
               key={project.title}
               number={project.number}
@@ -38,8 +40,22 @@ export default function ProjectsPage() {
               description={project.description}
               technologies={project.technologies}
               image={project.gallery[0]}
+              architecture={project.architecture}
             />
           ))}
+        </div>
+
+        <div className="mt-20 border-t border-neutral-800 pt-10">
+          <p className="text-sm text-neutral-500">
+            Want to discuss a project or technical opportunity?
+          </p>
+
+          <Link
+            href="/#contact"
+            className="mt-3 inline-block text-sm font-medium text-white transition-colors hover:text-blue-400"
+          >
+            Get in touch →
+          </Link>
         </div>
       </div>
     </main>
