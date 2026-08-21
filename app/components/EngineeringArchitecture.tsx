@@ -100,10 +100,10 @@ export default function EngineeringArchitecture() {
                           <Image
                             src={item.logo}
                             alt=""
-                            width={18}
-                            height={18}
+                            width={22}
+                            height={22}
                             aria-hidden="true"
-                            className="h-4 w-4 object-contain text-neutral-300"
+                            className="h-5 w-5 shrink-0 object-contain"
                           />
                         ) : null}
                         <span>{item.name}</span>
