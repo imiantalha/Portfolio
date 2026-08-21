@@ -1,7 +1,7 @@
 const experiences = [
   {
     period: "Sep 2024 — Present",
-    role: "Junior Software Engineer",
+    role: "Software Engineer",
     company: "MindBlaze Technologies",
     location: "Lahore, Pakistan",
     description:
