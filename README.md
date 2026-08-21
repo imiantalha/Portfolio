@@ -58,3 +58,5 @@ The portfolio is deployed on Vercel.
 ## License
 
 This repository contains my personal portfolio and content. Please do not reuse personal information, photographs, or portfolio content without permission.
+
+<!-- Temporary QA validation branch. -->
