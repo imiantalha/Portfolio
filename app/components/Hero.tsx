@@ -11,9 +11,14 @@ export default function Hero() {
             <span className="text-sm text-neutral-500">Open to opportunities</span>
           </div>
 
-          <p className="mt-8 text-sm font-medium uppercase tracking-[0.25em] text-blue-500">PHP / Laravel Software Engineer</p>
+          <p className="mt-8 text-sm font-medium uppercase tracking-[0.25em] text-blue-500">
+            PHP / Laravel Software Engineer
+          </p>
 
-          <h1 id="hero-title" className="mt-5 max-w-4xl text-5xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl">
+          <h1
+            id="hero-title"
+            className="mt-5 max-w-4xl text-5xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl"
+          >
             Building reliable software for real-world business needs.
           </h1>
 
@@ -22,20 +27,48 @@ export default function Hero() {
           </p>
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
-            <Link href="/projects" className="rounded-full bg-white px-6 py-3 text-center text-sm font-medium text-black transition-transform hover:scale-[1.02]">Explore My Work</Link>
-            <Link href="#contact" className="rounded-full border border-neutral-700 px-6 py-3 text-center text-sm font-medium text-white transition-colors hover:border-neutral-500">Let&apos;s Talk</Link>
+            <Link
+              href="#projects"
+              className="rounded-full bg-white px-6 py-3 text-center text-sm font-medium text-black transition-transform hover:scale-[1.02]"
+            >
+              Explore My Work
+            </Link>
+            <Link
+              href="#contact"
+              className="rounded-full border border-neutral-700 px-6 py-3 text-center text-sm font-medium text-white transition-colors hover:border-neutral-500"
+            >
+              Let&apos;s Talk
+            </Link>
           </div>
 
-          <div className="mt-12 flex flex-wrap gap-x-6 gap-y-3 text-sm text-neutral-500" aria-label="Primary technologies">
-            <span>PHP</span><span>Laravel</span><span>REST APIs</span><span>MySQL</span><span>React</span><span>Next.js</span>
+          <div
+            className="mt-12 flex flex-wrap gap-x-6 gap-y-3 text-sm text-neutral-500"
+            aria-label="Primary technologies"
+          >
+            <span>PHP</span>
+            <span>Laravel</span>
+            <span>REST APIs</span>
+            <span>MySQL</span>
+            <span>React</span>
+            <span>Next.js</span>
           </div>
         </div>
 
         <div className="flex justify-center lg:justify-end">
           <div className="relative">
-            <div aria-hidden="true" className="absolute -inset-4 rounded-full border border-neutral-800" />
+            <div
+              aria-hidden="true"
+              className="absolute -inset-4 rounded-full border border-neutral-800"
+            />
             <div className="relative h-64 w-64 overflow-hidden rounded-full border border-neutral-700 sm:h-80 sm:w-80">
-              <Image src="/images/profile/me.jpg" alt="Muhammad Talha, Software Engineer" fill priority className="object-cover" sizes="(max-width: 640px) 256px, 320px" />
+              <Image
+                src="/images/profile/me.jpg"
+                alt="Muhammad Talha, Software Engineer"
+                fill
+                priority
+                className="object-cover"
+                sizes="(max-width: 640px) 256px, 320px"
+              />
             </div>
           </div>
         </div>
