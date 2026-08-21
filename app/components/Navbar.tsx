@@ -11,7 +11,7 @@ const links = [
   { label: "Contact", href: "#contact" },
 ];
 
-const sectionIds = links.map((link) => link.href.replace("#", ""));
+const sectionIds = links.map(({ href }) => href.slice(1));
 
 export default function Navbar() {
   const [open, setOpen] = useState(false);
@@ -24,134 +24,72 @@ export default function Navbar() {
 
     if (!sections.length) return;
 
-    const updateActiveSection = () => {
-      const navbarOffset = 120;
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
 
-      let currentSection = sections[0].id;
+        if (visible) setActiveSection(visible.target.id);
+      },
+      { rootMargin: "-88px 0px -55% 0px", threshold: [0.05, 0.2, 0.5] },
+    );
 
-      for (const section of sections) {
-        const { top } = section.getBoundingClientRect();
+    sections.forEach((section) => observer.observe(section));
 
-        if (top <= navbarOffset) {
-          currentSection = section.id;
-        } else {
-          break;
-        }
-      }
-
-      setActiveSection(currentSection);
+    const syncHash = () => {
+      const hash = window.location.hash.slice(1);
+      if (sectionIds.includes(hash)) setActiveSection(hash);
     };
 
-    updateActiveSection();
-
-    window.addEventListener("scroll", updateActiveSection, {
-      passive: true,
-    });
-
-    window.addEventListener("resize", updateActiveSection);
-
+    syncHash();
+    window.addEventListener("hashchange", syncHash);
     return () => {
-      window.removeEventListener("scroll", updateActiveSection);
-      window.removeEventListener("resize", updateActiveSection);
+      observer.disconnect();
+      window.removeEventListener("hashchange", syncHash);
     };
   }, []);
 
+  const closeMenu = () => setOpen(false);
+
   return (
     <header className="sticky top-0 z-50 border-b border-neutral-900 bg-[#0a0a0a]/90 backdrop-blur">
-      <nav
-        className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8"
-        aria-label="Main navigation"
-      >
-        <Link
-          href="/"
-          className="text-sm font-semibold tracking-tight text-white"
-        >
-          Muhammad Talha
-        </Link>
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8" aria-label="Main navigation">
+        <Link href="/" className="text-sm font-semibold tracking-tight text-white" onClick={closeMenu}>Muhammad Talha</Link>
 
         <div className="hidden items-center gap-7 md:flex">
           {links.map((link) => {
-            const sectionId = link.href.replace("#", "");
+            const sectionId = link.href.slice(1);
             const isActive = activeSection === sectionId;
-
             return (
-              <Link
-                key={link.href}
-                href={link.href}
-                aria-current={isActive ? "location" : undefined}
-                className={`relative py-1 text-sm transition-colors duration-200 ${
-                  isActive
-                    ? "text-white"
-                    : "text-neutral-500 hover:text-white"
-                }`}
-              >
+              <Link key={link.href} href={link.href} aria-current={isActive ? "location" : undefined} className={`relative py-1 text-sm transition-colors duration-200 ${isActive ? "text-white" : "text-neutral-500 hover:text-white"}`}>
                 {link.label}
-
-                <span
-                  className={`absolute -bottom-1 left-1/2 h-0.5 -translate-x-1/2 rounded-full bg-blue-500 transition-all duration-200 ${
-                    isActive ? "w-4 opacity-100" : "w-0 opacity-0"
-                  }`}
-                />
+                <span aria-hidden="true" className={`absolute -bottom-1 left-1/2 h-0.5 -translate-x-1/2 rounded-full bg-blue-500 transition-all duration-200 ${isActive ? "w-4 opacity-100" : "w-0 opacity-0"}`} />
               </Link>
             );
           })}
-
-          <a
-            href="/Muhammad-Talha-CV.pdf"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-full border border-neutral-700 px-4 py-2 text-sm text-white transition-colors hover:border-neutral-500"
-          >
-            Resume
-          </a>
+          <a href="/Muhammad-Talha-CV.pdf" target="_blank" rel="noopener noreferrer" className="rounded-full border border-neutral-700 px-4 py-2 text-sm text-white transition-colors hover:border-neutral-500" aria-label="Open Muhammad Talha resume PDF in a new tab">Resume</a>
         </div>
 
-        <button
-          type="button"
-          onClick={() => setOpen(!open)}
-          aria-label="Toggle navigation"
-          aria-expanded={open}
-          className="text-neutral-400 transition-colors hover:text-white md:hidden"
-        >
-          {open ? "✕" : "☰"}
+        <button type="button" onClick={() => setOpen((value) => !value)} aria-label={open ? "Close navigation menu" : "Open navigation menu"} aria-expanded={open} aria-controls="mobile-navigation" className="rounded-md px-2 py-1 text-xl leading-none text-neutral-400 transition-colors hover:text-white md:hidden">
+          <span aria-hidden="true">{open ? "×" : "☰"}</span>
         </button>
       </nav>
 
-      {open && (
-        <div className="border-t border-neutral-900 px-6 py-5 md:hidden">
-          <div className="flex flex-col gap-4">
-            {links.map((link) => {
-              const sectionId = link.href.replace("#", "");
-              const isActive = activeSection === sectionId;
-
-              return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  onClick={() => setOpen(false)}
-                  aria-current={isActive ? "location" : undefined}
-                  className={`border-l-2 pl-3 text-sm transition-colors ${
-                    isActive
-                      ? "border-blue-500 text-white"
-                      : "border-transparent text-neutral-400 hover:text-white"
-                  }`}
-                >
-                  {link.label}
-                </Link>
-              );
-            })}
-
-            <a
-              href="/Muhammad-Talha-CV.pdf"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="mt-2 inline-flex w-fit rounded-full border border-neutral-700 px-4 py-2 text-sm text-white"
-            >
-              Resume
-            </a>
-          </div>
+      <div id="mobile-navigation" hidden={!open} className="border-t border-neutral-900 px-6 py-5 md:hidden">
+        <div className="flex flex-col gap-4">
+          {links.map((link) => {
+            const sectionId = link.href.slice(1);
+            const isActive = activeSection === sectionId;
+            return (
+              <Link key={link.href} href={link.href} onClick={closeMenu} aria-current={isActive ? "location" : undefined} className={`border-l-2 pl-3 text-sm transition-colors ${isActive ? "border-blue-500 text-white" : "border-transparent text-neutral-400 hover:text-white"}`}>
+                {link.label}
+              </Link>
+            );
+          })}
+          <a href="/Muhammad-Talha-CV.pdf" target="_blank" rel="noopener noreferrer" onClick={closeMenu} className="mt-2 inline-flex w-fit rounded-full border border-neutral-700 px-4 py-2 text-sm text-white" aria-label="Open Muhammad Talha resume PDF in a new tab">Resume</a>
         </div>
-      )}
+      </div>
     </header>
   );
 }
