@@ -11,23 +11,18 @@ The portfolio presents my professional experience, technical skills, selected pr
 - PHP / Laravel application development
 - REST API design and integration
 - React / Next.js full-stack development
-- MySQL and PostgreSQL
+- MySQL, PostgreSQL, and MS SQL Server
 - Authentication, RBAC, queues, jobs, and scheduled workflows
 - Payment, shipping, search, and notification integrations
 - Business workflow and enterprise application development
 
 ## Tech Stack
 
-- **Frontend:** React, Next.js, TypeScript, Tailwind CSS
+- **Frontend:** React, Next.js, TypeScript, Tailwind CSS, Blade
 - **Backend:** PHP, Laravel
-- **Databases:** MySQL, PostgreSQL
-- **APIs & Services:** REST APIs, Sanctum, third-party integrations
+- **Databases:** MySQL, PostgreSQL, MS SQL Server
+- **APIs & Services:** REST APIs, Laravel Passport, Laravel Sanctum, third-party integrations
 - **Tools:** Git, GitHub, Vercel
-
-## Education
-
-**Bachelor of Science in Computer Science**  
-Virtual University of Pakistan
 
 ## Local Development
 
@@ -44,6 +39,16 @@ npm run dev
 ```
 
 Open `http://localhost:3000` in your browser.
+
+## Validation
+
+The repository includes GitHub Actions validation for every push and pull request targeting `main`:
+
+```bash
+npm ci
+npm run lint
+npm run build
+```
 
 ## Production
 
