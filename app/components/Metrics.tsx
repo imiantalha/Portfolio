@@ -2,38 +2,32 @@ const metrics = [
   {
     value: "200+",
     label: "Vendors",
-    description:
-      "Supported across multi-vendor marketplace systems.",
+    description: "Across multi-vendor marketplace systems.",
   },
   {
     value: "1M+",
     label: "Customers",
-    description:
-      "Platforms designed to support large customer bases.",
+    description: "Across production customer-facing platforms.",
   },
   {
     value: "1M+",
     label: "API Users",
-    description:
-      "APIs serving high-volume application users.",
+    description: "Across high-volume application workloads.",
   },
   {
-    value: "6k+",
+    value: "6K+",
     label: "Products",
-    description:
-      "Production applications across multiple domains.",
+    description: "Across production e-commerce systems.",
   },
   {
     value: "Thousands",
     label: "Orders",
-    description:
-      "E-commerce systems handling high-volume order workflows.",
+    description: "Across high-volume order workflows.",
   },
   {
     value: "Large",
     label: "Data Volumes",
-    description:
-      "Experience working with large production databases.",
+    description: "Experience with large production databases.",
   },
 ];
 

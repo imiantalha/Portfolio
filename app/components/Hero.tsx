@@ -11,27 +11,29 @@ export default function Hero() {
             <span className="h-2 w-2 rounded-full bg-green-500" />
 
             <span className="text-sm text-neutral-500">
-              Available for opportunities
+              Open to opportunities
             </span>
           </div>
 
           <p className="mt-8 text-sm font-medium uppercase tracking-[0.25em] text-blue-500">
-            Software Engineer
+            PHP / Laravel Software Engineer
           </p>
 
           <h1 className="mt-5 max-w-4xl text-5xl font-semibold tracking-tight text-white sm:text-6xl lg:text-7xl">
-            Building reliable software for real-world business needs.
+            Building production software for real-world business needs.
           </h1>
 
           <p className="mt-7 max-w-2xl text-lg leading-8 text-neutral-400">
-            I&apos;m Muhammad Talha, a PHP / Laravel and full-stack developer
-            focused on building production applications, APIs, integrations,
-            and business workflows using Laravel, React, and Next.js.
+            I&apos;m Muhammad Talha, a PHP / Laravel-focused Software Engineer
+            with full-stack experience in React and Next.js. I build
+            production applications, REST APIs, integrations, and business
+            workflows — from understanding requirements to delivering
+            solutions to customers.
           </p>
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
             <Link
-              href="#projects"
+              href="/projects"
               className="rounded-full bg-white px-6 py-3 text-center text-sm font-medium text-black transition-transform hover:scale-[1.02]"
             >
               Explore My Work

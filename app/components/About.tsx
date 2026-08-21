@@ -12,31 +12,38 @@ export default function About() {
             </p>
 
             <h2 className="mt-5 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-              Software engineering with a focus on practical solutions.
+              Engineering practical solutions that work in production.
             </h2>
           </div>
 
           <div className="max-w-3xl space-y-6 text-base leading-8 text-neutral-400">
             <p>
               I&apos;m a Software Engineer specializing in PHP and Laravel,
-              with full-stack experience across React and Next.js. I build
-              production applications, REST APIs, integrations, and
-              business workflows for real-world products and organizations.
+              with full-stack experience across React and Next.js. My work
+              focuses on building production applications, REST APIs,
+              integrations, and business workflows that solve real
+              operational needs.
             </p>
 
             <p>
-              My experience spans multi-vendor and B2B e-commerce platforms,
-              employee management systems, and enterprise workflow
-              applications. I&apos;ve worked on systems involving large
-              datasets, high-volume users, payments, search, shipping,
-              notifications, background jobs, and reporting.
+              I&apos;ve contributed to multi-vendor and B2B e-commerce
+              platforms, employee management systems, and enterprise workflow
+              applications. This includes working with large datasets,
+              high-volume users, payments, shipping, search, notifications,
+              background jobs, reporting, and external database systems.
             </p>
 
             <p>
-              Beyond implementation, I&apos;m comfortable working through the
-              complete development lifecycle — understanding requirements,
-              communicating with clients, building solutions, and helping
-              deliver them to customers.
+              I also work closely with requirements and delivery. From
+              understanding a client&apos;s needs and translating business
+              workflows into technical solutions to implementing, integrating,
+              and helping deliver the final product to customers.
+            </p>
+
+            <p>
+              I value clean architecture, maintainable code, continuous
+              learning, and solving problems with practical engineering
+              decisions rather than unnecessary complexity.
             </p>
           </div>
         </div>
