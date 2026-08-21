@@ -61,7 +61,7 @@ export const mallshark: Project = {
     "Versioned mobile-facing APIs across v1, v2, and v3",
     "Firebase notifications and webhook processing",
     "Queue-based background jobs and CSV bulk product / stock processing",
-    "Caching and asynchronous processing workflows",
+    "Caching, analytics, and asynchronous processing workflows",
     "Multi-warehouse inventory workflows across the Middle East",
     "Customer- and origin-based pricing workflows",
     "MySQL integration with an external MS SQL system",
