@@ -1,5 +1,3 @@
-import Image from "next/image";
-
 const integrations = [
   {
     label: "Payments",
@@ -108,11 +106,13 @@ export default function EngineeringArchitecture() {
                         className="inline-flex items-center gap-2 rounded-lg border border-neutral-800 bg-neutral-950 px-2.5 py-2 text-xs text-neutral-400"
                       >
                         {item.logo ? (
-                          <Image
+                          /* eslint-disable-next-line @next/next/no-img-element */
+                          <img
                             src={item.logo}
                             alt={`${item.name} logo`}
                             width={22}
                             height={22}
+                            loading="lazy"
                             className={`h-5 w-5 shrink-0 object-contain ${
                               item.name === "ShipStation" ? "invert" : ""
                             }`}
