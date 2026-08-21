@@ -6,7 +6,10 @@ const integrations = [
     items: [
       { name: "Stripe", logo: "/images/logos/stripe.svg" },
       { name: "PayPal", logo: "/images/logos/paypal.svg" },
-      { name: "Crypto.com" },
+      {
+        name: "Crypto.com",
+        logo: "https://commons.wikimedia.org/wiki/Special:FilePath/Crypto.com_logo.svg",
+      },
     ],
   },
   {
@@ -15,7 +18,10 @@ const integrations = [
       { name: "FedEx", logo: "/images/logos/fedex.svg" },
       { name: "DHL", logo: "/images/logos/dhl.svg" },
       { name: "USPS", logo: "/images/logos/usps.svg" },
-      { name: "ShipStation" },
+      {
+        name: "ShipStation",
+        logo: "https://cdn.shipstation.com/logos/ShipStation-logo-black.png",
+      },
     ],
   },
   {
@@ -27,7 +33,12 @@ const integrations = [
   },
   {
     label: "Notifications",
-    items: [{ name: "Firebase / FCM" }],
+    items: [
+      {
+        name: "Firebase / FCM",
+        logo: "https://cdn.simpleicons.org/firebase/FFCA28",
+      },
+    ],
   },
 ];
 
@@ -99,11 +110,12 @@ export default function EngineeringArchitecture() {
                         {item.logo ? (
                           <Image
                             src={item.logo}
-                            alt=""
+                            alt={`${item.name} logo`}
                             width={22}
                             height={22}
-                            aria-hidden="true"
-                            className="h-5 w-5 shrink-0 object-contain"
+                            className={`h-5 w-5 shrink-0 object-contain ${
+                              item.name === "ShipStation" ? "invert" : ""
+                            }`}
                           />
                         ) : null}
                         <span>{item.name}</span>
