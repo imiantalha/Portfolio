@@ -5,7 +5,7 @@ const skillGroups = [
   },
   {
     title: "Frontend",
-    skills: ["React", "Next.js", "Blade"],
+    skills: ["React", "Next.js", "JavaScript / TypeScript", "Blade", "Vite"],
   },
   {
     title: "Databases",
