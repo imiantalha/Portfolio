@@ -18,10 +18,13 @@ export default function Navbar() {
   const pathname = usePathname();
   const isHome = pathname === "/";
   const [open, setOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState("about");
+  const [activeSection, setActiveSection] = useState<string | null>(null);
 
   useEffect(() => {
-    if (!isHome) return;
+    if (!isHome) {
+      setActiveSection(null);
+      return;
+    }
 
     const sections = sectionIds
       .map((id) => document.getElementById(id))
