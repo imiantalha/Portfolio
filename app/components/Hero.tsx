@@ -31,7 +31,7 @@ export default function Hero() {
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
             <Link
-              href="#work"
+              href="#projects"
               className="rounded-full bg-white px-6 py-3 text-center text-sm font-medium text-black transition-transform hover:scale-[1.02]"
             >
               Explore My Work
