@@ -1,7 +1,18 @@
 const skillGroups = [
   {
     title: "Backend",
-    skills: ["PHP", "Laravel", "REST APIs"],
+    skills: ["PHP", "Laravel"],
+  },
+  {
+    title: "API Architecture",
+    skills: [
+      "REST APIs",
+      "API Versioning",
+      "API Resources",
+      "Webhooks",
+      "Rate Limiting",
+      "Exception Handling",
+    ],
   },
   {
     title: "Laravel Engineering",
@@ -13,7 +24,6 @@ const skillGroups = [
       "Jobs & Queues",
       "Task Scheduling",
       "Notifications & Mailables",
-      "API Resources",
     ],
   },
   {
