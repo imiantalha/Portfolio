@@ -140,7 +140,7 @@ export default function Navbar() {
         <button
           type="button"
           onClick={() => setOpen((value) => !value)}
-          aria-label={open ? "Close navigation menu" : "Open navigation menu"}
+          aria-label="Toggle navigation"
           aria-expanded={open}
           aria-controls="mobile-navigation"
           className="rounded-md px-2 py-1 text-xl leading-none text-neutral-400 transition-colors hover:text-white md:hidden"
