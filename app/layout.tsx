@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   creator: "Muhammad Talha",
   alternates: { canonical: "/" },
   icons: {
-    icon: "/favicon.ico",
+    icon: "/icon.svg",
   },
   openGraph: {
     title: "Muhammad Talha | Software Engineer",
