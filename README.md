@@ -49,6 +49,10 @@ Open `http://localhost:3000` in your browser.
 
 The portfolio is deployed on Vercel.
 
+## CI
+
+Pushes and pull requests targeting `main` run the production lint and build checks on Node.js 24.
+
 ## Contact
 
 - Email: muhammadtalha.codes@gmail.com
