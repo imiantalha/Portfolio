@@ -54,14 +54,13 @@ export const mallshark: Project = {
     "Queues & Jobs",
   ],
   contributions: [
-    "Multi-vendor marketplace workflows",
-    "Product, vendor, customer, order, and checkout workflows",
+    "Product, vendor, customer, order, checkout, and multi-vendor workflows",
     "Payment integrations with Stripe, PayPal, and Crypto.com",
     "Shipping integrations with FedEx, DHL, USPS, and ShipStation",
     "Versioned mobile-facing APIs across v1, v2, and v3",
     "Firebase notifications and webhook processing",
     "Queue-based background jobs and CSV bulk product / stock processing",
-    "Caching and high-volume processing workflows",
+    "Caching and asynchronous processing workflows",
     "Multi-warehouse inventory workflows across the Middle East",
     "Customer- and origin-based pricing workflows",
     "MySQL integration with an external MS SQL system",
@@ -132,7 +131,7 @@ export const textileSouk: Project = {
   title: "Textile Souk",
   category: "B2B Textile Marketplace · API-First Backend",
   description:
-    "Built from scratch as an API-first backend for mobile clients, covering products, orders, enquiries, shipments, cargo management, stock, warehouse transfers, notifications, reports, and external business data.",
+    "Built from scratch as an API-first backend for a mobile application, covering products, orders, enquiries, shipments, cargo management, stock, warehouse transfers, notifications, reports, and external business data.",
   role: "Backend Engineer",
   technologies: [
     "PHP",
@@ -141,8 +140,6 @@ export const textileSouk: Project = {
     "MS SQL Server",
     "REST APIs",
     "Firebase / FCM",
-    "Queues & Jobs",
-    "Notifications",
   ],
   contributions: [
     "Built the backend and REST API system from scratch for mobile clients",
@@ -159,8 +156,8 @@ export const textileSouk: Project = {
     description:
       "The application used MySQL for its primary application and workflow records while integrating with MS SQL Server for external stock and pricing data. The separation reflected the business domain: stock and customer / region-specific pricing were maintained in the external system and consumed by the application.",
     results: [
-      "Backend built from scratch for mobile clients",
-      "MySQL for application records and business workflows",
+      "Backend built from scratch for a mobile application",
+      "MySQL for core application records and business workflows",
       "MS SQL Server for external stock and pricing information",
       "Customer- and region-specific pricing workflows",
       "Warehouse stock transfer workflows",
@@ -182,7 +179,7 @@ export const textileSouk: Project = {
     {
       title: "API-first mobile backend",
       description:
-        "There was no traditional web frontend for the product. The backend was designed around REST APIs consumed by mobile clients.",
+        "There was no traditional web frontend for the product. The backend was designed around REST APIs consumed by the mobile application.",
       approach: [
         "Built API endpoints around core marketplace workflows",
         "Structured product, order, shipment, stock, and notification operations for mobile clients",
@@ -190,6 +187,11 @@ export const textileSouk: Project = {
       ],
     },
   ],
+  impact: {
+    title: "A backend built around the mobile product",
+    description:
+      "The system was built from scratch as the API layer for a mobile application, with application data and external stock/pricing data connected through a deliberate two-database architecture.",
+  },
   gallery: [
     { src: "/images/textile-souk/dashboard.png", alt: "Textile Souk dashboard" },
     { src: "/images/textile-souk/products.png", alt: "Textile Souk products interface" },
@@ -205,7 +207,16 @@ export const ems: Project = {
   description:
     "An HR platform covering attendance, leave management, employee workflows, role-based access control, REST APIs, and a modern Next.js / React interface.",
   role: "Backend / Full-Stack Software Engineer",
-  technologies: ["Laravel", "PHP", "Next.js", "React", "REST APIs", "Sanctum", "RBAC", "MySQL"],
+  technologies: [
+    "Laravel",
+    "PHP",
+    "Next.js",
+    "React",
+    "REST APIs",
+    "Laravel Sanctum",
+    "RBAC",
+    "MySQL",
+  ],
   contributions: [
     "Attendance and leave management workflows",
     "REST API development",
@@ -222,13 +233,15 @@ export const ems: Project = {
     results: [
       "Laravel backend",
       "Next.js / React interface",
-      "Sanctum authentication",
+      "Laravel Sanctum authentication",
       "RBAC",
       "Attendance and leave workflows",
       "MySQL",
     ],
   },
-  gallery: [{ src: "/images/ems/dashboard.png", alt: "Employee management system dashboard" }],
+  gallery: [
+    { src: "/images/ems/dashboard.png", alt: "Employee management system dashboard" },
+  ],
 };
 
 export const pakRailways: Project = {
@@ -238,7 +251,15 @@ export const pakRailways: Project = {
   description:
     "An enterprise workflow system covering tenders, bids, orders, shipments, reporting, filters, imports/exports, and a unified dashboard search experience.",
   role: "Software Engineer",
-  technologies: ["Laravel", "PHP", "MySQL", "Algolia", "DataTables", "Excel Imports / Exports", "RBAC"],
+  technologies: [
+    "Laravel",
+    "PHP",
+    "MySQL",
+    "Algolia",
+    "DataTables",
+    "Excel Imports / Exports",
+    "RBAC",
+  ],
   contributions: [
     "Unified dashboard search across relevant enterprise data",
     "Tender and bid management workflows",
@@ -261,7 +282,9 @@ export const pakRailways: Project = {
       "Excel imports and exports",
     ],
   },
-  gallery: [{ src: "/images/pak-railways/dashboard.png", alt: "Pak Railways tender workflow dashboard" }],
+  gallery: [
+    { src: "/images/pak-railways/dashboard.png", alt: "Pak Railways tender workflow dashboard" },
+  ],
 };
 
 export const doorToDoor: Project = {
@@ -271,7 +294,7 @@ export const doorToDoor: Project = {
   description:
     "A concise single-vendor e-commerce implementation using Laravel and Blade, covering authentication, product browsing, categories, filtering, and backend integration for a Canada-focused storefront.",
   role: "Software Engineer",
-  technologies: ["Laravel", "PHP", "Blade", "MySQL", "REST APIs", "E-commerce"],
+  technologies: ["Laravel", "PHP", "Blade", "MySQL", "E-commerce"],
   contributions: [
     "Authentication",
     "Product listing and catalogue workflows",
@@ -283,9 +306,17 @@ export const doorToDoor: Project = {
     title: "Single-vendor e-commerce implementation",
     description:
       "A single-vendor implementation following familiar e-commerce patterns while keeping the architecture and presentation focused on the Canada-focused storefront.",
-    results: ["Single-vendor architecture", "Blade frontend", "Product catalogue", "Category filtering", "Authentication"],
+    results: [
+      "Single-vendor architecture",
+      "Blade frontend",
+      "Product catalogue",
+      "Category filtering",
+      "Authentication",
+    ],
   },
-  gallery: [{ src: "/images/door-to-door/home.png", alt: "Door to Door e-commerce homepage" }],
+  gallery: [
+    { src: "/images/door-to-door/home.png", alt: "Door to Door e-commerce homepage" },
+  ],
 };
 
 export const featuredProjects: Project[] = [mallshark, textileSouk];
