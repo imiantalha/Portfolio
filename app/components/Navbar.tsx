@@ -1,7 +1,7 @@
 "use client";
 
-import { useState } from "react";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const links = [
   { label: "About", href: "#about" },
@@ -11,36 +11,79 @@ const links = [
   { label: "Contact", href: "#contact" },
 ];
 
+const sectionIds = links.map((link) => link.href.replace("#", ""));
+
 export default function Navbar() {
   const [open, setOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState("");
 
-  const closeMenu = () => setOpen(false);
+  useEffect(() => {
+    const sections = sectionIds
+      .map((id) => document.getElementById(id))
+      .filter((section): section is HTMLElement => section !== null);
+
+    if (!sections.length) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visibleSections = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+
+        if (visibleSections.length > 0) {
+          setActiveSection(visibleSections[0].target.id);
+        }
+      },
+      {
+        rootMargin: "-20% 0px -60% 0px",
+        threshold: [0.1, 0.25, 0.5],
+      },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
+  }, []);
 
   return (
     <header className="sticky top-0 z-50 border-b border-neutral-900 bg-[#0a0a0a]/90 backdrop-blur">
       <nav
-        aria-label="Main navigation"
         className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8"
+        aria-label="Main navigation"
       >
         <Link
           href="/"
-          onClick={closeMenu}
           className="text-sm font-semibold tracking-tight text-white"
         >
           Muhammad Talha
         </Link>
 
-        {/* Desktop Navigation */}
         <div className="hidden items-center gap-7 md:flex">
-          {links.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-sm text-neutral-500 transition-colors hover:text-white"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {links.map((link) => {
+            const sectionId = link.href.replace("#", "");
+            const isActive = activeSection === sectionId;
+
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                aria-current={isActive ? "location" : undefined}
+                className={`relative py-1 text-sm transition-colors duration-200 ${
+                  isActive
+                    ? "text-white"
+                    : "text-neutral-500 hover:text-white"
+                }`}
+              >
+                {link.label}
+
+                <span
+                  className={`absolute -bottom-1 left-1/2 h-0.5 -translate-x-1/2 rounded-full bg-blue-500 transition-all duration-200 ${
+                    isActive ? "w-4 opacity-100" : "w-0 opacity-0"
+                  }`}
+                />
+              </Link>
+            );
+          })}
 
           <a
             href="/Muhammad-Talha-CV.pdf"
@@ -52,40 +95,48 @@ export default function Navbar() {
           </a>
         </div>
 
-        {/* Mobile Menu Button */}
         <button
           type="button"
-          onClick={() => setOpen((current) => !current)}
-          aria-label={open ? "Close navigation" : "Open navigation"}
+          onClick={() => setOpen(!open)}
+          aria-label="Toggle navigation"
           aria-expanded={open}
-          className="rounded-md px-2 py-1 text-lg text-neutral-400 transition-colors hover:text-white md:hidden"
+          className="text-neutral-400 transition-colors hover:text-white md:hidden"
         >
           {open ? "✕" : "☰"}
         </button>
       </nav>
 
-      {/* Mobile Navigation */}
       {open && (
-        <div className="border-t border-neutral-900 md:hidden">
-          <div className="mx-auto flex max-w-7xl flex-col px-6 py-5 lg:px-8">
-            {links.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={closeMenu}
-                className="border-b border-neutral-900 py-3 text-sm text-neutral-400 transition-colors last:border-0 hover:text-white"
-              >
-                {link.label}
-              </Link>
-            ))}
+        <div className="border-t border-neutral-900 px-6 py-5 md:hidden">
+          <div className="flex flex-col gap-4">
+            {links.map((link) => {
+              const sectionId = link.href.replace("#", "");
+              const isActive = activeSection === sectionId;
+
+              return (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setOpen(false)}
+                  aria-current={isActive ? "location" : undefined}
+                  className={`border-l-2 pl-3 text-sm transition-colors ${
+                    isActive
+                      ? "border-blue-500 text-white"
+                      : "border-transparent text-neutral-400 hover:text-white"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              );
+            })}
 
             <a
               href="/Muhammad-Talha-CV.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-4 inline-flex w-fit rounded-full border border-neutral-700 px-4 py-2 text-sm text-white transition-colors hover:border-neutral-500"
+              className="mt-2 inline-flex w-fit rounded-full border border-neutral-700 px-4 py-2 text-sm text-white"
             >
-              View Resume
+              Resume
             </a>
           </div>
         </div>
