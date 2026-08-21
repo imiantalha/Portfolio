@@ -85,9 +85,9 @@ export default function ProjectCaseStudy({ project }: ProjectCaseStudyProps) {
 
       <div className="border-t border-neutral-800 p-4 sm:p-6">
         <div className="grid gap-4 md:grid-cols-2">
-          {project.gallery.map((image, index) => (
+          {project.gallery.map((image) => (
             <div key={image.src} className="group relative aspect-[16/10] overflow-hidden rounded-xl bg-neutral-900">
-              <Image src={image.src} alt={image.alt} fill priority={index === 0} className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]" sizes="(max-width: 768px) 100vw, 50vw" />
+              <Image src={image.src} alt={image.alt} fill className="object-cover object-top transition-transform duration-500 group-hover:scale-[1.02]" sizes="(max-width: 768px) 100vw, 50vw" />
             </div>
           ))}
         </div>
