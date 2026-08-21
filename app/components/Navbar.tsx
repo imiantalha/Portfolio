@@ -40,7 +40,9 @@ export default function Navbar() {
       let current: string | null = null;
 
       for (const section of sections) {
-        if (section.offsetTop <= marker) {
+        const sectionTop = section.getBoundingClientRect().top + window.scrollY;
+
+        if (sectionTop <= marker) {
           current = section.id;
         } else {
           break;
