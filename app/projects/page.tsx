@@ -1,10 +1,27 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import ProjectCard from "../components/ProjectCard";
 import { projects } from "../data/projects";
 
+export const metadata: Metadata = {
+  title: "Projects",
+  description:
+    "Selected production projects by Muhammad Talha across e-commerce, B2B marketplaces, HR platforms, and enterprise workflow systems.",
+  alternates: {
+    canonical: "/projects",
+  },
+  openGraph: {
+    title: "Projects | Muhammad Talha",
+    description:
+      "Selected production projects across e-commerce, B2B marketplaces, HR platforms, and enterprise workflow systems.",
+    url: "/projects",
+    type: "website",
+  },
+};
+
 export default function ProjectsPage() {
   return (
-    <main className="min-h-screen bg-[#0a0a0a] text-white">
+    <main id="main-content" className="min-h-screen bg-[#0a0a0a] text-white">
       <div className="mx-auto max-w-7xl px-6 py-24 lg:px-8">
         <Link
           href="/"
