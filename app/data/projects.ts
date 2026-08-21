@@ -57,6 +57,7 @@ export const mallshark: Project = {
     "Product, vendor, customer, order, checkout, and multi-vendor workflows",
     "Payment integrations with Stripe, PayPal, and Crypto.com",
     "Shipping integrations with FedEx, DHL, USPS, and ShipStation",
+    "Shipment creation, label generation, and tracking URL workflows",
     "Versioned mobile-facing APIs across v1, v2, and v3",
     "Firebase notifications and webhook processing",
     "Queue-based background jobs and CSV bulk product / stock processing",
@@ -131,7 +132,7 @@ export const textileSouk: Project = {
   title: "Textile Souk",
   category: "B2B Textile Marketplace · API-First Backend",
   description:
-    "Built from scratch as an API-first backend for a mobile application, covering products, orders, enquiries, shipments, cargo management, stock, warehouse transfers, notifications, reports, and external business data.",
+    "Built from scratch as an API-first backend for a mobile application, covering products, orders, inquiries, shipments, cargo management, stock, warehouse transfers, notifications, reports, and external business data.",
   role: "Backend Engineer",
   technologies: [
     "PHP",
@@ -144,12 +145,13 @@ export const textileSouk: Project = {
   contributions: [
     "Built the backend and REST API system from scratch for mobile clients",
     "Product and order management",
-    "Enquiry workflows",
+    "Inquiry workflows",
     "Shipment and cargo management",
-    "Stock management and warehouse stock transfers",
-    "Firebase push notifications",
+    "Stock management and stock transfers between warehouses",
+    "Firebase / FCM push notifications",
     "Reports and business workflows",
-    "Integration with an external MS SQL Server system",
+    "External stock and pricing data integration through MS SQL Server",
+    "Customer-based and region-based pricing workflows",
   ],
   architecture: {
     title: "Two-database architecture driven by business data",
@@ -162,7 +164,7 @@ export const textileSouk: Project = {
       "Customer- and region-specific pricing workflows",
       "Warehouse stock transfer workflows",
       "REST API-first architecture",
-      "Firebase push notifications",
+      "Firebase / FCM push notifications",
     ],
   },
   challenges: [
