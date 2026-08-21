@@ -32,9 +32,10 @@ const integrations = [
   {
     label: "Notifications",
     items: [
+      { name: "Firebase / FCM", logo: "/images/logos/firebase.svg" },
       {
-        name: "Firebase / FCM",
-        logo: "https://cdn.simpleicons.org/firebase/FFCA28",
+        name: "Laravel Notifications",
+        logo: "/images/logos/laravel.svg",
       },
     ],
   },
