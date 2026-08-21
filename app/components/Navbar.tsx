@@ -13,6 +13,7 @@ const links = [
 ];
 
 const sectionIds = links.map(({ href }) => href.slice(1));
+const NAV_OFFSET = 96;
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -32,34 +33,46 @@ export default function Navbar() {
 
     if (!sections.length) return;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter((entry) => entry.isIntersecting)
-          .sort((a, b) => {
-            const aDistance = Math.abs(a.boundingClientRect.top - 96);
-            const bDistance = Math.abs(b.boundingClientRect.top - 96);
-            return aDistance - bDistance;
-          })[0];
+    let frame = 0;
 
-        if (visible) setActiveSection(visible.target.id);
-      },
-      { rootMargin: "-96px 0px -52% 0px", threshold: [0, 0.15, 0.35] },
-    );
+    const syncActiveSection = () => {
+      const marker = window.scrollY + NAV_OFFSET + 1;
+      let current: string | null = null;
 
-    sections.forEach((section) => observer.observe(section));
+      for (const section of sections) {
+        if (section.offsetTop <= marker) {
+          current = section.id;
+        } else {
+          break;
+        }
+      }
+
+      setActiveSection(current);
+      frame = 0;
+    };
+
+    const onScroll = () => {
+      if (frame) return;
+      frame = window.requestAnimationFrame(syncActiveSection);
+    };
 
     const syncHash = () => {
       const hash = window.location.hash.slice(1);
-      if (sectionIds.includes(hash)) setActiveSection(hash);
+      if (sectionIds.includes(hash)) {
+        setActiveSection(hash);
+      } else {
+        syncActiveSection();
+      }
     };
 
     syncHash();
+    window.addEventListener("scroll", onScroll, { passive: true });
     window.addEventListener("hashchange", syncHash);
 
     return () => {
-      observer.disconnect();
+      window.removeEventListener("scroll", onScroll);
       window.removeEventListener("hashchange", syncHash);
+      if (frame) window.cancelAnimationFrame(frame);
     };
   }, [isHome]);
 
