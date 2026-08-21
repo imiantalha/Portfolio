@@ -4,10 +4,7 @@ const integrations = [
     items: [
       { name: "Stripe", logo: "/images/logos/stripe.svg" },
       { name: "PayPal", logo: "/images/logos/paypal.svg" },
-      {
-        name: "Crypto.com",
-        logo: "https://commons.wikimedia.org/wiki/Special:FilePath/Crypto.com_logo.svg",
-      },
+      { name: "Crypto.com", logo: "/images/logos/crypto-com.svg" },
     ],
   },
   {
