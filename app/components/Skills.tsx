@@ -4,16 +4,31 @@ const skillGroups = [
     skills: ["PHP", "Laravel", "REST APIs"],
   },
   {
+    title: "Laravel Engineering",
+    skills: [
+      "Service Classes",
+      "Dependency Injection",
+      "Repository Pattern",
+      "Events & Listeners",
+      "Jobs & Queues",
+      "Task Scheduling",
+      "Notifications & Mailables",
+      "API Resources",
+    ],
+  },
+  {
     title: "Frontend",
-    skills: ["React", "Next.js", "JavaScript / TypeScript", "Blade", "Vite"],
+    skills: ["React", "Next.js", "JavaScript / TypeScript", "Blade", "Vite", "AJAX"],
   },
   {
-    title: "Databases",
-    skills: ["MySQL", "MS SQL Server", "PostgreSQL"],
-  },
-  {
-    title: "Backend Engineering",
-    skills: ["Queues / Jobs", "Caching", "Webhooks", "API Versioning"],
+    title: "Data & Performance",
+    skills: [
+      "MySQL",
+      "MS SQL Server",
+      "PostgreSQL",
+      "Caching",
+      "Database Transactions",
+    ],
   },
   {
     title: "Search",
@@ -34,11 +49,13 @@ const skillGroups = [
   },
   {
     title: "Authentication & Authorization",
-    skills: ["Laravel Passport", "Laravel Sanctum", "RBAC"],
-  },
-  {
-    title: "Data & Reporting",
-    skills: ["CSV Processing", "Excel Import / Export", "Reporting"],
+    skills: [
+      "Laravel Passport",
+      "Laravel Sanctum",
+      "Policies & Gates",
+      "Session Authentication",
+      "RBAC",
+    ],
   },
 ];
 
