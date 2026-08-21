@@ -24,6 +24,11 @@ The portfolio presents my professional experience, technical skills, selected pr
 - **APIs & Services:** REST APIs, Laravel Passport, Laravel Sanctum, third-party integrations
 - **Tools:** Git, GitHub, Vercel
 
+## Education
+
+**Bachelor of Science in Computer Science**  
+Virtual University of Pakistan
+
 ## Local Development
 
 Install dependencies:
