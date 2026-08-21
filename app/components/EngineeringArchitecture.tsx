@@ -1,8 +1,44 @@
 const integrations = [
-  { label: "Payments", items: "Stripe · PayPal · Crypto.com" },
-  { label: "Shipping", items: "FedEx · DHL · USPS · ShipStation" },
-  { label: "Search", items: "Meilisearch · Algolia" },
-  { label: "Notifications", items: "Firebase / FCM" },
+  {
+    label: "Payments",
+    items: [
+      { name: "Stripe", logo: "/images/logos/stripe.svg" },
+      { name: "PayPal", logo: "/images/logos/paypal.svg" },
+      {
+        name: "Crypto.com",
+        logo: "https://commons.wikimedia.org/wiki/Special:FilePath/Crypto.com_logo.svg",
+      },
+    ],
+  },
+  {
+    label: "Shipping",
+    items: [
+      { name: "FedEx", logo: "/images/logos/fedex.svg" },
+      { name: "DHL", logo: "/images/logos/dhl.svg" },
+      { name: "USPS", logo: "/images/logos/usps.svg" },
+      {
+        name: "ShipStation",
+        logo: "https://cdn.shipstation.com/logos/ShipStation-logo-black.png",
+      },
+    ],
+  },
+  {
+    label: "Search",
+    items: [
+      { name: "Meilisearch", logo: "/images/logos/meilisearch.svg" },
+      { name: "Algolia", logo: "/images/logos/algolia.svg" },
+    ],
+  },
+  {
+    label: "Notifications",
+    items: [
+      { name: "Firebase / FCM", logo: "/images/logos/firebase.svg" },
+      {
+        name: "Laravel Notifications",
+        logo: "/images/logos/laravel.svg",
+      },
+    ],
+  },
 ];
 
 export default function EngineeringArchitecture() {
@@ -64,7 +100,29 @@ export default function EngineeringArchitecture() {
               {integrations.map((integration) => (
                 <div key={integration.label} className="rounded-xl border border-neutral-800 bg-[#0b0b0b] p-4">
                   <p className="text-xs font-medium uppercase tracking-[0.15em] text-blue-500">{integration.label}</p>
-                  <p className="mt-2 text-sm leading-6 text-neutral-400">{integration.items}</p>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {integration.items.map((item) => (
+                      <span
+                        key={item.name}
+                        className="inline-flex items-center gap-2 rounded-lg border border-neutral-800 bg-neutral-950 px-2.5 py-2 text-xs text-neutral-400"
+                      >
+                        {item.logo ? (
+                          /* eslint-disable-next-line @next/next/no-img-element */
+                          <img
+                            src={item.logo}
+                            alt={`${item.name} logo`}
+                            width={22}
+                            height={22}
+                            loading="lazy"
+                            className={`h-5 w-5 shrink-0 object-contain ${
+                              item.name === "ShipStation" ? "invert" : ""
+                            }`}
+                          />
+                        ) : null}
+                        <span>{item.name}</span>
+                      </span>
+                    ))}
+                  </div>
                 </div>
               ))}
             </div>
