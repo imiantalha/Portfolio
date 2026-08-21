@@ -1,18 +1,18 @@
-const recognition = [
+const highlights = [
   {
-    title: "Performance Recognition",
+    title: "Career Progression",
     description:
-      "Received recognition through performance-based compensation, including a performance bonus and increment.",
+      "Progressed from a PHP / Laravel development internship into professional software engineering roles.",
   },
   {
-    title: "Appreciated Contribution",
+    title: "Production Experience",
     description:
-      "Recognized for contribution and reliability within professional project environments.",
+      "Contributed to production systems across e-commerce, B2B marketplaces, HR platforms, and enterprise workflows.",
   },
   {
-    title: "Continuous Learner",
+    title: "End-to-End Delivery",
     description:
-      "Consistently builds new technical capabilities by learning and applying modern tools and engineering practices.",
+      "Experience working from business requirements and implementation through integrations, refinement, and customer delivery.",
   },
 ];
 
@@ -20,28 +20,28 @@ export default function Recognition() {
   return (
     <section className="border-t border-neutral-800 py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="max-w-2xl">
+        <div className="max-w-3xl">
           <p className="text-sm font-medium uppercase tracking-[0.25em] text-blue-500">
-            Recognition
+            Professional Highlights
           </p>
 
           <h2 className="mt-5 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
-            A few things I value professionally.
+            Experience built through real projects.
           </h2>
         </div>
 
-        <div className="mt-14 grid gap-5 md:grid-cols-3">
-          {recognition.map((item) => (
+        <div className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-800 md:grid-cols-3">
+          {highlights.map((highlight) => (
             <article
-              key={item.title}
-              className="rounded-2xl border border-neutral-800 bg-neutral-950 p-7"
+              key={highlight.title}
+              className="bg-[#0a0a0a] p-7 sm:p-8"
             >
               <h3 className="text-lg font-semibold text-white">
-                {item.title}
+                {highlight.title}
               </h3>
 
-              <p className="mt-4 text-sm leading-6 text-neutral-500">
-                {item.description}
+              <p className="mt-4 text-sm leading-7 text-neutral-500">
+                {highlight.description}
               </p>
             </article>
           ))}
