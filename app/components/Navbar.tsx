@@ -22,10 +22,7 @@ export default function Navbar() {
   const [activeSection, setActiveSection] = useState<string | null>(null);
 
   useEffect(() => {
-    if (!isHome) {
-      setActiveSection(null);
-      return;
-    }
+    if (!isHome) return;
 
     const sections = sectionIds
       .map((id) => document.getElementById(id))
