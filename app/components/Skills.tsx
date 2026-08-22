@@ -18,17 +18,19 @@ const skillGroups = [
     title: "Laravel Engineering",
     skills: [
       "Service Classes",
-      "Dependency Injection",
+      "Service Container & Dependency Injection",
       "Repository Pattern",
       "Events & Listeners",
       "Jobs & Queues",
       "Task Scheduling",
       "Notifications & Mailables",
+      "Laravel Telescope",
+      "HTTP Client",
     ],
   },
   {
     title: "Frontend",
-    skills: ["React", "Next.js", "JavaScript / TypeScript", "Blade", "Vite", "AJAX"],
+    skills: ["React", "Next.js", "JavaScript / TypeScript", "Blade", "Vite"],
   },
   {
     title: "Data & Performance",
