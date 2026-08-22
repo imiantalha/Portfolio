@@ -14,6 +14,7 @@ const links = [
 
 const sectionIds = links.map(({ href }) => href.slice(1));
 const NAV_OFFSET = 120;
+const ACTIVE_MARKER_RATIO = 0.35;
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -35,23 +36,35 @@ export default function Navbar() {
     const updateActiveSection = () => {
       cancelAnimationFrame(frame);
       frame = requestAnimationFrame(() => {
-        const marker = window.scrollY + NAV_OFFSET;
-        const documentBottom = window.scrollY + window.innerHeight;
+        const scrollBottom = window.scrollY + window.innerHeight;
         const pageBottom = document.documentElement.scrollHeight;
 
-        if (documentBottom >= pageBottom - 8) {
+        if (scrollBottom >= pageBottom - 8) {
           setActiveSection("contact");
           return;
         }
 
+        // Use a stable point inside the viewport rather than section visibility.
+        // This prevents long sections from losing their active state when their
+        // top is far above the viewport or when another section briefly appears.
+        const marker = window.scrollY + Math.max(
+          NAV_OFFSET,
+          window.innerHeight * ACTIVE_MARKER_RATIO,
+        );
+
         let current = sections[0]?.id ?? null;
 
         for (const section of sections) {
-          const top = section.getBoundingClientRect().top + window.scrollY;
-          if (top <= marker) {
+          const top = section.offsetTop;
+          const bottom = top + section.offsetHeight;
+
+          if (marker >= top && marker < bottom) {
             current = section.id;
-          } else {
             break;
+          }
+
+          if (marker >= bottom) {
+            current = section.id;
           }
         }
 
