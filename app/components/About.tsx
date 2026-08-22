@@ -34,10 +34,29 @@ export default function About() {
             </p>
 
             <p>
-              I also work closely with requirements and delivery. From
-              understanding a client&apos;s needs and translating business
-              workflows into technical solutions to implementing, integrating,
-              and helping deliver the final product to customers.
+              My engineering work extends beyond feature development: I write
+              PHPUnit feature and API tests, use structured Git workflows with
+              pull requests and code reviews, investigate performance with
+              database/query analysis and Laravel Telescope, and troubleshoot
+              production issues across APIs, queues, logs, and application
+              execution flow.
+            </p>
+
+            <p>
+              I also work across delivery and maintenance, using Docker for
+              consistent Laravel/PHP environments and deploying applications
+              across Vercel, Railway, Nginx, and Docker-based environments.
+              This includes environment configuration, production fixes, and
+              ongoing application maintenance.
+            </p>
+
+            <p>
+              Much of my professional engineering experience comes from private
+              company repositories and proprietary production systems. While
+              the source code and internal infrastructure cannot be published,
+              I can demonstrate the underlying engineering practices through
+              sanitized case studies, architecture explanations, personal
+              projects, and technical discussions.
             </p>
 
             <p>

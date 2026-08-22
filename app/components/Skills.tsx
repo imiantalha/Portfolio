@@ -1,17 +1,19 @@
 const skillGroups = [
   {
     title: "Backend",
-    skills: ["PHP", "Laravel"],
+    skills: ["PHP", "Laravel", "REST APIs", "Authentication", "Authorization", "API Versioning", "Webhooks"],
   },
   {
-    title: "API Architecture",
+    title: "Engineering",
     skills: [
-      "REST APIs",
-      "API Versioning",
-      "API Resources",
-      "Webhooks",
+      "Queues / Jobs",
+      "Background Processing",
+      "Caching",
+      "Database Optimization",
+      "Bulk Processing",
+      "Testing / PHPUnit",
+      "Monitoring / Debugging",
       "Rate Limiting",
-      "Exception Handling",
     ],
   },
   {
@@ -36,15 +38,12 @@ const skillGroups = [
     title: "Data & Performance",
     skills: [
       "MySQL",
-      "MS SQL Server",
       "PostgreSQL",
+      "MS SQL Server",
       "Caching",
       "Database Transactions",
+      "Query Optimization",
     ],
-  },
-  {
-    title: "Search",
-    skills: ["Meilisearch", "Algolia"],
   },
   {
     title: "Integrations",
@@ -60,6 +59,14 @@ const skillGroups = [
     ],
   },
   {
+    title: "Search",
+    skills: ["Meilisearch", "Algolia"],
+  },
+  {
+    title: "Development / Infrastructure",
+    skills: ["Git", "Docker", "Postman", "Vercel", "Railway", "Nginx"],
+  },
+  {
     title: "Authentication & Authorization",
     skills: [
       "Laravel Passport",
@@ -67,6 +74,7 @@ const skillGroups = [
       "Policies & Gates",
       "Session Authentication",
       "RBAC",
+      "CSRF Protection",
     ],
   },
 ];
@@ -84,8 +92,8 @@ export default function Skills() {
           </h2>
           <p className="mt-6 text-base leading-7 text-neutral-400">
             The strongest part of my stack is PHP / Laravel and API
-            engineering, supported by frontend, database, integration, and
-            production workflow experience.
+            engineering, supported by frontend, database, integration, testing,
+            debugging, and production workflow experience.
           </p>
         </div>
 

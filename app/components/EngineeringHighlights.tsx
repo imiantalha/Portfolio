@@ -15,7 +15,7 @@ const highlights = [
     eyebrow: "API architecture",
     title: "Versioned REST APIs",
     description:
-      "Worked with mobile-facing REST APIs across v1, v2, and v3, supporting API evolution as production requirements changed.",
+      "Worked with mobile-facing REST APIs across v1, v2, and v3, supporting API evolution with authentication, validation, API resources, webhooks, Postman testing, and production-focused endpoint verification.",
   },
   {
     eyebrow: "Data architecture",
@@ -27,13 +27,13 @@ const highlights = [
     eyebrow: "Background processing",
     title: "Queues & bulk processing",
     description:
-      "Used queues and background jobs for customer/vendor processing and bulk CSV product and stock updates, keeping large workloads asynchronous.",
+      "Used queues and background jobs for customer/vendor processing, report and email workflows, and bulk CSV updates, including chunk-by-ID processing for large datasets and failed-job investigation.",
   },
   {
     eyebrow: "Mobile backends",
     title: "API-first systems",
     description:
-      "Built backend APIs consumed by mobile applications, including authentication, Firebase / FCM notifications, and business workflow endpoints.",
+      "Built backend APIs consumed by mobile applications, including authentication, Firebase / FCM notifications, business workflow endpoints, and practical API testing and debugging.",
   },
 ];
 
@@ -55,8 +55,8 @@ export default function EngineeringHighlights() {
             Practical engineering decisions behind the products.
           </h2>
           <p className="mt-6 text-base leading-7 text-neutral-400">
-            Selected examples of the backend, API, integration, and data
-            engineering work I have contributed to in production systems.
+            Selected examples of the backend, API, integration, data, and
+            production engineering work I have contributed to in real systems.
           </p>
         </div>
 
@@ -77,6 +77,17 @@ export default function EngineeringHighlights() {
               </p>
             </article>
           ))}
+        </div>
+
+        <div className="mt-10 max-w-4xl border-t border-neutral-800 pt-8">
+          <p className="text-sm leading-7 text-neutral-500">
+            <span className="font-medium text-neutral-300">Performance & debugging:</span>{" "}
+            Optimized a product-detail operation by investigating database/query
+            bottlenecks and applying targeted optimization, reducing response
+            time from approximately 2–3 seconds to around 0.5 seconds. I also
+            use Laravel Telescope to investigate slow queries, API response
+            times, requests, jobs, and application behavior.
+          </p>
         </div>
       </div>
     </section>
