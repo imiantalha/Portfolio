@@ -13,7 +13,6 @@ const links = [
 ];
 
 const sectionIds = links.map(({ href }) => href.slice(1));
-const NAV_OFFSET = 96;
 
 export default function Navbar() {
   const pathname = usePathname();
@@ -30,16 +29,13 @@ export default function Navbar() {
 
     if (!sections.length) return;
 
-    let frame = 0;
-
-    const syncActiveSection = () => {
-      const marker = window.scrollY + NAV_OFFSET + 1;
-      let current: string | null = null;
+    const updateActiveSection = () => {
+      const marker = window.scrollY + 120;
+      let current = sections[0]?.id ?? null;
 
       for (const section of sections) {
-        const sectionTop = section.getBoundingClientRect().top + window.scrollY;
-
-        if (sectionTop <= marker) {
+        const top = section.getBoundingClientRect().top + window.scrollY;
+        if (top <= marker) {
           current = section.id;
         } else {
           break;
@@ -47,31 +43,40 @@ export default function Navbar() {
       }
 
       setActiveSection(current);
-      frame = 0;
     };
 
-    const onScroll = () => {
-      if (frame) return;
-      frame = window.requestAnimationFrame(syncActiveSection);
-    };
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => {
+            const aDistance = Math.abs(a.boundingClientRect.top - 120);
+            const bDistance = Math.abs(b.boundingClientRect.top - 120);
+            return aDistance - bDistance;
+          });
 
-    const syncHash = () => {
-      const hash = window.location.hash.slice(1);
-      if (sectionIds.includes(hash)) {
-        setActiveSection(hash);
-      } else {
-        syncActiveSection();
-      }
-    };
+        if (visible[0]) {
+          setActiveSection(visible[0].target.id);
+        } else {
+          updateActiveSection();
+        }
+      },
+      {
+        root: null,
+        rootMargin: "-120px 0px -55% 0px",
+        threshold: [0, 0.01, 0.1, 0.25],
+      },
+    );
 
-    syncHash();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("hashchange", syncHash);
+    sections.forEach((section) => observer.observe(section));
+    updateActiveSection();
+    window.addEventListener("resize", updateActiveSection);
+    window.addEventListener("hashchange", updateActiveSection);
 
     return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("hashchange", syncHash);
-      if (frame) window.cancelAnimationFrame(frame);
+      observer.disconnect();
+      window.removeEventListener("resize", updateActiveSection);
+      window.removeEventListener("hashchange", updateActiveSection);
     };
   }, [isHome]);
 
@@ -178,7 +183,7 @@ export default function Navbar() {
             target="_blank"
             rel="noopener noreferrer"
             onClick={closeMenu}
-            className="mt-2 inline-flex w-fit rounded-full border border-neutral-700 px-4 py-2 text-sm text-white transition-colors hover:border-neutral-500"
+            className="mt-2 inline-flex w-fit rounded-full border border-neutral-700 px-4 py-2 text-sm text-white"
             aria-label="Open Muhammad Talha resume PDF in a new tab"
           >
             Resume
