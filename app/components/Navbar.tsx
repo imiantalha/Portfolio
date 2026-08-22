@@ -39,18 +39,15 @@ export default function Navbar() {
         const documentBottom = window.scrollY + window.innerHeight;
         const pageBottom = document.documentElement.scrollHeight;
 
-        // Always mark Contact active when the user reaches the bottom of the page.
         if (documentBottom >= pageBottom - 8) {
           setActiveSection("contact");
           return;
         }
 
-        // Pick the last section whose top has crossed the navbar marker.
-        // Unlike IntersectionObserver, this remains stable for very tall sections.
         let current = sections[0]?.id ?? null;
 
         for (const section of sections) {
-          const top = section.offsetTop;
+          const top = section.getBoundingClientRect().top + window.scrollY;
           if (top <= marker) {
             current = section.id;
           } else {
@@ -85,10 +82,7 @@ export default function Navbar() {
 
   return (
     <header className="sticky top-0 z-50 border-b border-neutral-900 bg-[#0a0a0a]/90 backdrop-blur">
-      <nav
-        className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8"
-        aria-label="Main navigation"
-      >
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8" aria-label="Main navigation">
         <Link href="/" className="text-sm font-semibold tracking-tight text-white" onClick={closeMenu}>
           Muhammad Talha
         </Link>
@@ -99,13 +93,7 @@ export default function Navbar() {
             const isActive = isHome && activeSection === sectionId;
 
             return (
-              <Link
-                key={link.href}
-                href={getHref(link.href)}
-                onClick={() => handleSectionClick(sectionId)}
-                aria-current={isActive ? "location" : undefined}
-                className={`relative py-1 text-sm transition-colors duration-200 ${isActive ? "text-white" : "text-neutral-500 hover:text-white"}`}
-              >
+              <Link key={link.href} href={getHref(link.href)} onClick={() => handleSectionClick(sectionId)} aria-current={isActive ? "location" : undefined} className={`relative py-1 text-sm transition-colors duration-200 ${isActive ? "text-white" : "text-neutral-500 hover:text-white"}`}>
                 {link.label}
                 <span aria-hidden="true" className={`absolute -bottom-1 left-1/2 h-0.5 -translate-x-1/2 rounded-full bg-blue-500 transition-all duration-200 ${isActive ? "w-4 opacity-100" : "w-0 opacity-0"}`} />
               </Link>
@@ -129,13 +117,7 @@ export default function Navbar() {
             const isActive = isHome && activeSection === sectionId;
 
             return (
-              <Link
-                key={link.href}
-                href={getHref(link.href)}
-                onClick={() => handleSectionClick(sectionId)}
-                aria-current={isActive ? "location" : undefined}
-                className={`border-l-2 pl-3 text-sm transition-colors ${isActive ? "border-blue-500 text-white" : "border-transparent text-neutral-400 hover:text-white"}`}
-              >
+              <Link key={link.href} href={getHref(link.href)} onClick={() => handleSectionClick(sectionId)} aria-current={isActive ? "location" : undefined} className={`border-l-2 pl-3 text-sm transition-colors ${isActive ? "border-blue-500 text-white" : "border-transparent text-neutral-400 hover:text-white"}`}>
                 {link.label}
               </Link>
             );
