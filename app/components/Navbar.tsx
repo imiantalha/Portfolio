@@ -30,9 +30,51 @@ export default function Navbar() {
 
     if (!sections.length) return;
 
-    let frame = 0;
+    const visibleSections = new Map<string, number>();
 
-    const syncActiveSection = () => {
+    const updateActiveSection = () => {
+      if (!visibleSections.size) return;
+
+      let currentSection: string | null = null;
+      let closestToNav = Number.POSITIVE_INFINITY;
+
+      for (const [id, top] of visibleSections) {
+        const distance = Math.abs(top - NAV_OFFSET);
+
+        if (distance < closestToNav) {
+          closestToNav = distance;
+          currentSection = id;
+        }
+      }
+
+      if (currentSection) setActiveSection(currentSection);
+    };
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            visibleSections.set(
+              entry.target.id,
+              entry.boundingClientRect.top,
+            );
+          } else {
+            visibleSections.delete(entry.target.id);
+          }
+        });
+
+        updateActiveSection();
+      },
+      {
+        root: null,
+        rootMargin: `-${NAV_OFFSET}px 0px -55% 0px`,
+        threshold: 0,
+      },
+    );
+
+    sections.forEach((section) => observer.observe(section));
+
+    const syncInitialSection = () => {
       const marker = window.scrollY + NAV_OFFSET + 1;
       let current: string | null = null;
 
@@ -47,32 +89,11 @@ export default function Navbar() {
       }
 
       setActiveSection(current);
-      frame = 0;
     };
 
-    const onScroll = () => {
-      if (frame) return;
-      frame = window.requestAnimationFrame(syncActiveSection);
-    };
+    syncInitialSection();
 
-    const syncHash = () => {
-      const hash = window.location.hash.slice(1);
-      if (sectionIds.includes(hash)) {
-        setActiveSection(hash);
-      } else {
-        syncActiveSection();
-      }
-    };
-
-    syncHash();
-    window.addEventListener("scroll", onScroll, { passive: true });
-    window.addEventListener("hashchange", syncHash);
-
-    return () => {
-      window.removeEventListener("scroll", onScroll);
-      window.removeEventListener("hashchange", syncHash);
-      if (frame) window.cancelAnimationFrame(frame);
-    };
+    return () => observer.disconnect();
   }, [isHome]);
 
   const closeMenu = () => setOpen(false);
