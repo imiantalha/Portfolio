@@ -12,7 +12,7 @@ export default function Hero() {
           </div>
 
           <p className="mt-8 text-sm font-medium uppercase tracking-[0.25em] text-blue-500">
-            PHP / Laravel Software Engineer
+            Software Engineer · Backend-Focused Full Stack
           </p>
 
           <h1
@@ -23,7 +23,7 @@ export default function Hero() {
           </h1>
 
           <p className="mt-7 max-w-2xl text-lg leading-8 text-neutral-400">
-            I&apos;m Muhammad Talha, a backend-focused Software Engineer specializing in PHP and Laravel, with full-stack experience in React and Next.js. I build production applications, REST APIs, integrations, and business workflows from requirements through delivery.
+            I&apos;m Muhammad Talha, a backend-focused Software Engineer with 2+ years of professional experience building production applications with PHP and Laravel, REST APIs, databases, integrations, testing, background processing, and deployment. I also work across React and Next.js when the product requires full-stack delivery.
           </p>
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
