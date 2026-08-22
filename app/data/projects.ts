@@ -107,7 +107,7 @@ export const textileSouk: Project = {
   description:
     "API-first mobile backend covering products, orders, inquiries, shipments, cargo, stock, warehouse transfers, notifications, reports, and external business data.",
   role: "Backend Engineer",
-  technologies: ["PHP", "Laravel", "MySQL", "MS SQL Server", "REST APIs", "Firebase / FCM"],
+  technologies: ["PHP", "Laravel", "MySQL", "MS SQL Server", "REST APIs", "Firebase / FCM", "Zendesk"],
   contributions: [
     "Built the backend and REST APIs from scratch for mobile clients",
     "Product and order management",
@@ -117,6 +117,8 @@ export const textileSouk: Project = {
     "Reports and business workflows",
     "External stock and pricing integration through MS SQL Server",
     "Customer- and region-based pricing workflows",
+    "Zendesk support integration and ticket lifecycle webhooks",
+    "Automated new-user synchronization with Zendesk",
     "Background processing for resource-intensive operations",
   ],
   architecture: {
@@ -131,6 +133,7 @@ export const textileSouk: Project = {
       "Warehouse stock transfers",
       "REST API-first architecture",
       "Firebase / FCM notifications",
+      "Zendesk support integration",
     ],
   },
   challenges: [
@@ -152,10 +155,19 @@ export const textileSouk: Project = {
         "Implemented business logic independently of a traditional web UI",
       ],
     },
+    {
+      title: "Zendesk support integration",
+      description: "Integrated Zendesk as the customer-support ticketing system and synchronized support activity with the application.",
+      approach: [
+        "Handled webhooks for new tickets, replies, queries, resolutions, and closures",
+        "Automated new-user registration synchronization with Zendesk",
+        "Kept customer-support records connected to application users and lifecycle events",
+      ],
+    },
   ],
   impact: {
     title: "A backend built around the mobile product",
-    description: "Built the API layer from scratch, connecting application workflows with external stock and pricing data through a deliberate two-database architecture.",
+    description: "Built the API layer from scratch, connecting application workflows with external stock and pricing data through a deliberate two-database architecture and integrating Zendesk for customer support.",
   },
   gallery: [
     { src: "/images/textile-souk/dashboard.png", alt: "Textile Souk dashboard" },
