@@ -10,59 +10,34 @@ export default function About() {
             <p className="text-sm font-medium uppercase tracking-[0.25em] text-blue-500">
               About Me
             </p>
-
             <h2 className="mt-5 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
               Engineering practical solutions that work in production.
             </h2>
           </div>
 
-          <div className="max-w-3xl space-y-6 text-base leading-8 text-neutral-400">
+          <div className="max-w-3xl space-y-5 text-base leading-8 text-neutral-400">
             <p>
-              I&apos;m a Software Engineer specializing in PHP and Laravel,
-              with full-stack experience across React and Next.js. My work
-              focuses on building production applications, REST APIs,
-              integrations, and business workflows that solve real
-              operational needs.
+              I&apos;m a Software Engineer specializing in PHP and Laravel, with
+              full-stack experience across React and Next.js. I build production
+              applications, REST APIs, integrations, and business workflows for
+              e-commerce, B2B, HR, and enterprise systems.
             </p>
 
             <p>
-              I&apos;ve contributed to multi-vendor and B2B e-commerce
-              platforms, employee management systems, and enterprise workflow
-              applications. This includes working with large datasets,
-              high-volume users, payments, shipping, search, notifications,
-              background jobs, reporting, and external database systems.
+              My work spans authentication and RBAC, databases and large datasets,
+              payments, shipping, search, notifications, queues, reporting, and
+              external database integrations. I also write PHPUnit tests, use Git
+              workflows with pull requests and code reviews, and investigate
+              performance and production issues across APIs, queries, queues, and logs.
             </p>
 
             <p>
-              My engineering work extends beyond feature development: I write
-              PHPUnit feature and API tests, use structured Git workflows with
-              pull requests and code reviews, investigate performance with
-              database/query analysis and Laravel Telescope, and troubleshoot
-              production issues across APIs, queues, logs, and application
-              execution flow.
-            </p>
-
-            <p>
-              I also work across delivery and maintenance, using Docker for
-              consistent Laravel/PHP environments and deploying applications
-              across Vercel, Railway, Nginx, and Docker-based environments.
-              This includes environment configuration, production fixes, and
-              ongoing application maintenance.
-            </p>
-
-            <p>
-              Much of my professional engineering experience comes from private
-              company repositories and proprietary production systems. While
-              the source code and internal infrastructure cannot be published,
-              I can demonstrate the underlying engineering practices through
-              sanitized case studies, architecture explanations, personal
-              projects, and technical discussions.
-            </p>
-
-            <p>
-              I value clean architecture, maintainable code, continuous
-              learning, and solving problems with practical engineering
-              decisions rather than unnecessary complexity.
+              I work through the full delivery cycle with Docker, Nginx, Vercel,
+              Railway, scheduled tasks, and background workers. Most professional
+              systems are proprietary, so I demonstrate that work through sanitized
+              case studies, architecture decisions, measurable outcomes, and personal
+              projects. I value maintainable code, practical architecture, and
+              continuous improvement over unnecessary complexity.
             </p>
           </div>
         </div>
