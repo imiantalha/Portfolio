@@ -33,83 +33,56 @@ export const mallshark: Project = {
   title: "Mallshark",
   category: "Multi-Vendor E-commerce Marketplace",
   description:
-    "A production multi-vendor e-commerce marketplace covering vendors, customers, products, orders, checkout, payments, shipping, search, notifications, inventory, reporting, and mobile-facing APIs.",
+    "Production marketplace covering vendors, customers, products, orders, checkout, payments, shipping, search, notifications, inventory, reporting, and mobile APIs.",
   role: "Backend / Full-Stack Software Engineer",
-  technologies: [
-    "PHP",
-    "Laravel",
-    "MySQL",
-    "Laravel Passport",
-    "REST APIs",
-    "Stripe",
-    "PayPal",
-    "Crypto.com",
-    "FedEx",
-    "DHL",
-    "USPS",
-    "ShipStation",
-    "Algolia",
-    "Meilisearch",
-    "Firebase / FCM",
-    "Queues & Jobs",
-  ],
+  technologies: ["PHP", "Laravel", "MySQL", "Laravel Passport", "REST APIs", "Stripe", "PayPal", "Crypto.com", "FedEx", "DHL", "USPS", "ShipStation", "Algolia", "Meilisearch", "Firebase / FCM", "Queues & Jobs"],
   contributions: [
     "Product, vendor, customer, order, checkout, and multi-vendor workflows",
-    "Payment integrations with Stripe, PayPal, and Crypto.com",
-    "Shipping integrations with FedEx, DHL, USPS, and ShipStation",
-    "Shipment creation, label generation, and tracking URL workflows",
-    "Versioned mobile-facing APIs across v1, v2, and v3",
+    "Stripe, PayPal, and Crypto.com payment integrations",
+    "FedEx, DHL, USPS, and ShipStation shipping integrations",
+    "Shipment creation, label generation, and tracking workflows",
+    "Versioned mobile APIs across v1, v2, and v3",
     "Firebase notifications and webhook processing",
-    "Queue-based background jobs and CSV bulk product / stock processing",
-    "Caching, analytics, and asynchronous processing workflows",
-    "Multi-warehouse inventory workflows across the Middle East",
-    "Customer- and origin-based pricing workflows",
+    "Queue jobs and CSV bulk product / stock processing",
+    "Caching, analytics, and asynchronous processing",
+    "Multi-warehouse inventory across the Middle East",
+    "Customer- and origin-based pricing",
     "MySQL integration with an external MS SQL system",
-    "Optimized a product-detail operation by investigating database/query bottlenecks, reducing response time from approximately 2–3 seconds to around 0.5 seconds",
+    "Database/query optimization that reduced one product-detail operation from ~2–3s to ~0.5s",
   ],
   architecture: {
     title: "Production-scale marketplace engineering",
     description:
-      "Contributed to a production marketplace with multiple business domains, external integrations, versioned APIs, asynchronous processing, and data exchanged between MySQL and an external MS SQL system.",
+      "Multiple business domains, external integrations, versioned APIs, asynchronous processing, and data exchanged between MySQL and an external MS SQL system.",
     results: [
-      "Production platform supporting 200+ vendors",
-      "Production platform supporting 1M+ customers",
-      "Production APIs serving 1M+ users",
-      "Thousands of orders",
-      "6K+ products",
-      "Large production database",
-      "Multiple warehouses across the Middle East",
-      "Laravel Passport authentication",
-      "API versions v1, v2, and v3",
+      "200+ vendors", "1M+ customers", "1M+ API users", "Thousands of orders", "6K+ products",
+      "Large production database", "Multiple warehouses across the Middle East", "Laravel Passport", "API v1 / v2 / v3",
     ],
   },
   challenges: [
     {
-      title: "Algolia → self-hosted Meilisearch migration",
-      description:
-        "The existing production search implementation used Algolia. I migrated the search system to self-hosted Meilisearch to remove the third-party search dependency while maintaining the application's search functionality.",
+      title: "Algolia → self-hosted Meilisearch",
+      description: "Migrated production search from Algolia to self-hosted Meilisearch while preserving application search functionality.",
       approach: [
         "Replaced the production search dependency with self-hosted Meilisearch",
-        "Migrated the application search integration and product search workflow",
+        "Migrated application and product search workflows",
         "Removed approximately $100/month in recurring search cost",
       ],
     },
     {
-      title: "Multi-carrier shipping integrations",
-      description:
-        "The marketplace needed to work with multiple shipping authorities and services rather than relying on a single carrier integration.",
+      title: "Multi-carrier shipping",
+      description: "Supported multiple shipping authorities and services instead of a single carrier dependency.",
       approach: [
         "Integrated FedEx, DHL, USPS, and ShipStation",
-        "Implemented shipment creation and label generation workflows",
-        "Supported tracking URLs across carrier integrations",
+        "Implemented shipment creation and label generation",
+        "Supported carrier tracking URLs",
       ],
     },
     {
       title: "Multi-database business workflows",
-      description:
-        "Core application data lived in MySQL while stock and customer-related information also came from an external MS SQL system.",
+      description: "Core application data lived in MySQL while stock and customer-related data also came from an external MS SQL system.",
       approach: [
-        "Connected application workflows across MySQL and MS SQL",
+        "Connected workflows across MySQL and MS SQL",
         "Integrated stock and customer data into marketplace operations",
         "Handled business workflows spanning different data sources",
       ],
@@ -117,8 +90,7 @@ export const mallshark: Project = {
   ],
   impact: {
     title: "A measurable infrastructure decision",
-    description:
-      "The Algolia-to-Meilisearch migration removed approximately $100/month in recurring search cost without claiming an unmeasured performance improvement.",
+    description: "The Algolia-to-Meilisearch migration removed approximately $100/month in recurring search cost without claiming an unmeasured performance improvement.",
   },
   gallery: [
     { src: "/images/mallshark/explore.png", alt: "Mallshark product exploration interface" },
@@ -133,68 +105,57 @@ export const textileSouk: Project = {
   title: "Textile Souk",
   category: "B2B Textile Marketplace · API-First Backend",
   description:
-    "Built from scratch as an API-first backend for a mobile application, covering products, orders, inquiries, shipments, cargo management, stock, warehouse transfers, notifications, reports, and external business data.",
+    "API-first mobile backend covering products, orders, inquiries, shipments, cargo, stock, warehouse transfers, notifications, reports, and external business data.",
   role: "Backend Engineer",
-  technologies: [
-    "PHP",
-    "Laravel",
-    "MySQL",
-    "MS SQL Server",
-    "REST APIs",
-    "Firebase / FCM",
-  ],
+  technologies: ["PHP", "Laravel", "MySQL", "MS SQL Server", "REST APIs", "Firebase / FCM"],
   contributions: [
-    "Built the backend and REST API system from scratch for mobile clients",
+    "Built the backend and REST APIs from scratch for mobile clients",
     "Product and order management",
-    "Inquiry workflows",
-    "Shipment and cargo management",
-    "Stock management and stock transfers between warehouses",
+    "Inquiry, shipment, and cargo workflows",
+    "Stock management and warehouse transfers",
     "Firebase / FCM push notifications",
     "Reports and business workflows",
-    "External stock and pricing data integration through MS SQL Server",
-    "Customer-based and region-based pricing workflows",
-    "Background processing for resource-intensive application operations",
+    "External stock and pricing integration through MS SQL Server",
+    "Customer- and region-based pricing workflows",
+    "Background processing for resource-intensive operations",
   ],
   architecture: {
     title: "Two-database architecture driven by business data",
     description:
-      "The application used MySQL for its primary application and workflow records while integrating with MS SQL Server for external stock and pricing data. The separation reflected the business domain: stock and customer / region-specific pricing were maintained in the external system and consumed by the application.",
+      "MySQL handled core application workflows while MS SQL Server supplied external stock and pricing data, including customer- and region-specific pricing.",
     results: [
       "Backend built from scratch for a mobile application",
-      "MySQL for core application records and business workflows",
-      "MS SQL Server for external stock and pricing information",
-      "Customer- and region-specific pricing workflows",
-      "Warehouse stock transfer workflows",
+      "MySQL for core application records and workflows",
+      "MS SQL Server for external stock and pricing",
+      "Customer- and region-specific pricing",
+      "Warehouse stock transfers",
       "REST API-first architecture",
-      "Firebase / FCM push notifications",
+      "Firebase / FCM notifications",
     ],
   },
   challenges: [
     {
       title: "Customer- and region-specific pricing",
-      description:
-        "Pricing was not simply a single catalogue value. The application needed to use pricing information associated with customers and regions from the external business data system.",
+      description: "Pricing depended on customer and regional context from the external business data system.",
       approach: [
-        "Integrated the application with the external MS SQL pricing data",
+        "Integrated external MS SQL pricing data",
         "Connected customer and regional context to pricing workflows",
-        "Kept application workflows aligned with external stock and pricing information",
+        "Kept application workflows aligned with external stock and pricing",
       ],
     },
     {
       title: "API-first mobile backend",
-      description:
-        "There was no traditional web frontend for the product. The backend was designed around REST APIs consumed by the mobile application.",
+      description: "The backend was designed around REST APIs consumed by the mobile application rather than a traditional web frontend.",
       approach: [
-        "Built API endpoints around core marketplace workflows",
-        "Structured product, order, shipment, stock, and notification operations for mobile clients",
-        "Implemented backend business logic independently of a traditional web UI",
+        "Built APIs around core marketplace workflows",
+        "Structured product, order, shipment, stock, and notification operations",
+        "Implemented business logic independently of a traditional web UI",
       ],
     },
   ],
   impact: {
     title: "A backend built around the mobile product",
-    description:
-      "The system was built from scratch as the API layer for a mobile application, with application data and external stock/pricing data connected through a deliberate two-database architecture.",
+    description: "Built the API layer from scratch, connecting application workflows with external stock and pricing data through a deliberate two-database architecture.",
   },
   gallery: [
     { src: "/images/textile-souk/dashboard.png", alt: "Textile Souk dashboard" },
@@ -208,21 +169,11 @@ export const ems: Project = {
   number: "03",
   title: "Employee Management System",
   category: "HR & Employee Management",
-  description:
-    "An HR platform covering attendance, leave management, employee workflows, role-based access control, REST APIs, and a modern Next.js / React interface.",
+  description: "HR platform covering attendance, leave, employee workflows, RBAC, REST APIs, and a Next.js / React interface.",
   role: "Backend / Full-Stack Software Engineer",
-  technologies: [
-    "Laravel",
-    "PHP",
-    "Next.js",
-    "React",
-    "REST APIs",
-    "Laravel Sanctum",
-    "RBAC",
-    "MySQL",
-  ],
+  technologies: ["Laravel", "PHP", "Next.js", "React", "REST APIs", "Laravel Sanctum", "RBAC", "MySQL"],
   contributions: [
-    "Attendance and leave management workflows",
+    "Attendance and leave workflows",
     "REST API development",
     "Laravel Sanctum authentication",
     "Role-based access control",
@@ -232,96 +183,51 @@ export const ems: Project = {
   ],
   architecture: {
     title: "API-driven HR application",
-    description:
-      "Worked across the Laravel API and Next.js / React interface, connecting backend business workflows with a modern application UI.",
-    results: [
-      "Laravel backend",
-      "Next.js / React interface",
-      "Laravel Sanctum authentication",
-      "RBAC",
-      "Attendance and leave workflows",
-      "MySQL",
-    ],
+    description: "Worked across the Laravel API and Next.js / React interface, connecting backend business workflows with the application UI.",
+    results: ["Laravel backend", "Next.js / React interface", "Laravel Sanctum", "RBAC", "Attendance and leave workflows", "MySQL"],
   },
-  gallery: [
-    { src: "/images/ems/dashboard.png", alt: "Employee management system dashboard" },
-  ],
+  gallery: [{ src: "/images/ems/dashboard.png", alt: "Employee management system dashboard" }],
 };
 
 export const pakRailways: Project = {
   number: "04",
   title: "Pak Railways Tender Workflow Management System",
   category: "Enterprise Workflow Management",
-  description:
-    "An enterprise workflow system covering tenders, bids, orders, shipments, reporting, filters, imports/exports, and a unified dashboard search experience.",
+  description: "Enterprise workflow system covering tenders, bids, orders, shipments, reporting, filters, imports/exports, and unified dashboard search.",
   role: "Software Engineer",
-  technologies: [
-    "Laravel",
-    "PHP",
-    "MySQL",
-    "Algolia",
-    "DataTables",
-    "Excel Imports / Exports",
-    "RBAC",
-  ],
+  technologies: ["Laravel", "PHP", "MySQL", "Algolia", "DataTables", "Excel Imports / Exports", "RBAC"],
   contributions: [
-    "Unified dashboard search across relevant enterprise data",
-    "Tender and bid management workflows",
+    "Unified dashboard search across enterprise data",
+    "Tender and bid management",
     "Order and shipment workflows",
     "Advanced filters and DataTables",
     "Reports and Excel exports",
-    "Excel imports and bulk addition workflows",
-    "Large report-generation and email workflows using chunk-by-ID processing for manageable batches",
+    "Excel imports and bulk addition",
+    "Large report-generation/email workflows using chunk-by-ID processing",
     "CRUD and enterprise data management",
   ],
   architecture: {
     title: "Unified search for enterprise workflows",
-    description:
-      "Instead of forcing users to navigate separate pages for different information types, dashboard search brought relevant orders, bids, shipments, and other enterprise data into one search experience.",
-    results: [
-      "Unified dashboard search",
-      "Algolia-powered search",
-      "Bid management",
-      "Order and shipment workflows",
-      "Filtered reporting",
-      "Excel imports and exports",
-    ],
+    description: "Dashboard search brought relevant orders, bids, shipments, and other enterprise data into one search experience.",
+    results: ["Unified dashboard search", "Algolia search", "Bid management", "Order and shipment workflows", "Filtered reporting", "Excel imports and exports"],
   },
-  gallery: [
-    { src: "/images/pak-railways/dashboard.png", alt: "Pak Railways tender workflow dashboard" },
-  ],
+  gallery: [{ src: "/images/pak-railways/dashboard.png", alt: "Pak Railways tender workflow dashboard" }],
 };
 
 export const doorToDoor: Project = {
   number: "05",
   title: "Door to Door / Fresco Canada",
   category: "Canada-Focused Single-Vendor E-commerce",
-  description:
-    "A concise single-vendor e-commerce implementation using Laravel and Blade, covering authentication, product browsing, categories, filtering, and backend integration for a Canada-focused storefront.",
+  description: "Single-vendor e-commerce implementation using Laravel and Blade, covering authentication, catalogue, categories, filtering, storefront, and backend integration.",
   role: "Software Engineer",
   technologies: ["Laravel", "PHP", "Blade", "MySQL", "E-commerce"],
-  contributions: [
-    "Authentication",
-    "Product listing and catalogue workflows",
-    "Category browsing and filtering",
-    "Storefront and dashboard interfaces",
-    "Backend integration",
-  ],
+  contributions: ["Authentication", "Product listing and catalogue", "Category browsing and filtering", "Storefront and dashboard interfaces", "Backend integration"],
   architecture: {
     title: "Single-vendor e-commerce implementation",
-    description:
-      "A single-vendor implementation following familiar e-commerce patterns while keeping the architecture and presentation focused on the Canada-focused storefront.",
-    results: [
-      "Single-vendor architecture",
-      "Blade frontend",
-      "Product catalogue",
-      "Category filtering",
-      "Authentication",
-    ],
+    description: "A focused Canada-oriented storefront using familiar single-vendor e-commerce patterns.",
+    results: ["Single-vendor architecture", "Blade frontend", "Product catalogue", "Category filtering", "Authentication"],
   },
-  gallery: [
-    { src: "/images/door-to-door/home.png", alt: "Door to Door e-commerce homepage" },
-  ],
+  gallery: [{ src: "/images/door-to-door/home.png", alt: "Door to Door e-commerce homepage" }],
 };
 
 export const featuredProjects: Project[] = [mallshark, textileSouk];
