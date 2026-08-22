@@ -7,11 +7,16 @@ const experiences = [
     description:
       "Working on production software across e-commerce, B2B marketplaces, HR platforms, and enterprise workflow systems, with a focus on backend engineering and full-stack delivery.",
     highlights: [
-      "Build and maintain PHP/Laravel applications and REST APIs for production systems.",
+      "Build and maintain PHP/Laravel applications and versioned REST APIs for production systems.",
       "Develop frontend functionality using React, Next.js, and Blade based on project requirements.",
-      "Implement payment, shipping, search, notification, and other third-party integrations.",
-      "Build queues, background jobs, scheduled processes, and reporting workflows for asynchronous and recurring operations.",
-      "Work with MySQL and external database systems to support business and integration workflows.",
+      "Implement payment, shipping, search, notification, and other third-party integrations, including webhooks.",
+      "Write PHPUnit feature and API tests covering authentication, validation, business workflows, and critical application behavior.",
+      "Use structured Git workflows with feature, bug-fix, hot-fix, development, and main branches, including pull requests, code reviews, cherry-picking, and production hot-fixes.",
+      "Build queues, background jobs, scheduled processes, chunked processing, and reporting workflows for asynchronous and recurring operations.",
+      "Implement application security controls including authorization policies, request validation, CSRF protection, and rate limiting for sensitive operations.",
+      "Investigate production issues by tracing requests, logs, database behavior, API responses, queues, and application execution flow to identify root causes and implement targeted fixes.",
+      "Work with MySQL and external database systems to support business and integration workflows, including query and performance investigation.",
+      "Use Docker for Laravel/PHP development and work with Vercel, Railway, and Nginx environments for deployment, configuration, troubleshooting, and ongoing maintenance.",
       "Collaborate with clients to understand requirements, translate business workflows into technical solutions, and deliver production features.",
     ],
   },
@@ -27,7 +32,7 @@ const experiences = [
       "Built REST APIs and implemented application business logic.",
       "Worked with relational databases and data-driven application workflows.",
       "Implemented features and improvements based on project requirements.",
-      "Collaborated within development workflows to test, refine, and deliver application functionality.",
+      "Collaborated within development workflows to test, debug, refine, and deliver application functionality.",
     ],
   },
   {
@@ -65,7 +70,8 @@ export default function Experience() {
           <p className="mt-6 text-base leading-7 text-neutral-400">
             My experience has grown from backend development with PHP and
             Laravel into production engineering across APIs, integrations,
-            business workflows, and full-stack applications.
+            business workflows, testing, debugging, deployment, and full-stack
+            applications.
           </p>
         </div>
 

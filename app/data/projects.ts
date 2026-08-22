@@ -65,15 +65,16 @@ export const mallshark: Project = {
     "Multi-warehouse inventory workflows across the Middle East",
     "Customer- and origin-based pricing workflows",
     "MySQL integration with an external MS SQL system",
+    "Optimized a product-detail operation by investigating database/query bottlenecks, reducing response time from approximately 2–3 seconds to around 0.5 seconds",
   ],
   architecture: {
     title: "Production-scale marketplace engineering",
     description:
       "Contributed to a production marketplace with multiple business domains, external integrations, versioned APIs, asynchronous processing, and data exchanged between MySQL and an external MS SQL system.",
     results: [
-      "200+ vendors",
-      "1M+ customers",
-      "1M+ API users",
+      "Production platform supporting 200+ vendors",
+      "Production platform supporting 1M+ customers",
+      "Production APIs serving 1M+ users",
       "Thousands of orders",
       "6K+ products",
       "Large production database",
@@ -152,6 +153,7 @@ export const textileSouk: Project = {
     "Reports and business workflows",
     "External stock and pricing data integration through MS SQL Server",
     "Customer-based and region-based pricing workflows",
+    "Background processing for resource-intensive application operations",
   ],
   architecture: {
     title: "Two-database architecture driven by business data",
@@ -269,6 +271,7 @@ export const pakRailways: Project = {
     "Advanced filters and DataTables",
     "Reports and Excel exports",
     "Excel imports and bulk addition workflows",
+    "Large report-generation and email workflows using chunk-by-ID processing for manageable batches",
     "CRUD and enterprise data management",
   ],
   architecture: {
