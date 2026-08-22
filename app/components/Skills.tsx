@@ -1,15 +1,15 @@
 const skillGroups = [
   {
-    title: "Backend",
-    skills: ["PHP", "Laravel", "REST APIs", "Authentication", "Authorization", "API Versioning", "Webhooks"],
+    title: "Core Backend",
+    skills: ["PHP", "Laravel", "REST APIs", "API Versioning", "Authentication", "Authorization", "Webhooks"],
   },
   {
     title: "Engineering",
     skills: [
+      "Database Optimization",
       "Queues / Jobs",
       "Background Processing",
       "Caching",
-      "Database Optimization",
       "Bulk Processing",
       "Testing / PHPUnit",
       "Monitoring / Debugging",
@@ -17,64 +17,69 @@ const skillGroups = [
     ],
   },
   {
-    title: "Laravel Engineering",
+    title: "Laravel Practices",
     skills: [
       "Service Classes",
-      "Service Container & Dependency Injection",
+      "Dependency Injection",
       "Repository Pattern",
       "Events & Listeners",
-      "Jobs & Queues",
       "Task Scheduling",
-      "Notifications & Mailables",
+      "Notifications & Mail",
       "Laravel Telescope",
       "HTTP Client",
     ],
   },
   {
-    title: "Frontend",
-    skills: ["React", "Next.js", "JavaScript / TypeScript", "Blade", "Vite"],
-  },
-  {
-    title: "Data & Performance",
+    title: "Data",
     skills: [
       "MySQL",
       "PostgreSQL",
       "MS SQL Server",
-      "Caching",
       "Database Transactions",
       "Query Optimization",
+      "Multi-database Workflows",
     ],
+  },
+  {
+    title: "Full Stack",
+    skills: ["React", "Next.js", "JavaScript / TypeScript", "Blade", "Vite"],
   },
   {
     title: "Integrations",
     skills: [
       "Stripe",
       "PayPal",
-      "Crypto.com",
       "FedEx",
       "DHL",
       "USPS",
       "ShipStation",
       "Firebase / FCM",
+      "Meilisearch",
+      "Algolia",
     ],
   },
   {
-    title: "Search",
-    skills: ["Meilisearch", "Algolia"],
-  },
-  {
-    title: "Development / Infrastructure",
-    skills: ["Git", "Docker", "Postman", "Vercel", "Railway", "Nginx"],
-  },
-  {
-    title: "Authentication & Authorization",
+    title: "Delivery",
     skills: [
-      "Laravel Passport",
+      "Git",
+      "Pull Requests",
+      "Code Reviews",
+      "Docker",
+      "Nginx",
+      "Vercel",
+      "Railway",
+      "Postman",
+    ],
+  },
+  {
+    title: "Security",
+    skills: [
       "Laravel Sanctum",
+      "Laravel Passport",
       "Policies & Gates",
-      "Session Authentication",
       "RBAC",
       "CSRF Protection",
+      "Request Validation",
     ],
   },
 ];
@@ -83,7 +88,7 @@ export default function Skills() {
   return (
     <section id="skills" className="border-t border-neutral-800 py-24 sm:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
-        <div className="max-w-2xl">
+        <div className="max-w-3xl">
           <p className="text-sm font-medium uppercase tracking-[0.25em] text-blue-500">
             Technical Expertise
           </p>
@@ -91,9 +96,9 @@ export default function Skills() {
             Backend-first engineering, with full-stack delivery.
           </h2>
           <p className="mt-6 text-base leading-7 text-neutral-400">
-            The strongest part of my stack is PHP / Laravel and API
-            engineering, supported by frontend, database, integration, testing,
-            debugging, and production workflow experience.
+            I keep my strongest skills close to the work I can demonstrate: API
+            engineering, databases, application performance, security, testing,
+            asynchronous processing, production debugging, and full-stack delivery.
           </p>
         </div>
 
@@ -119,6 +124,12 @@ export default function Skills() {
             </article>
           ))}
         </div>
+
+        <p className="mt-8 max-w-3xl text-sm leading-7 text-neutral-600">
+          CI/CD automation and deeper cloud infrastructure are areas I am actively
+          developing; my production experience today is strongest in application
+          engineering, Git workflows, deployment, troubleshooting, and maintenance.
+        </p>
       </div>
     </section>
   );
