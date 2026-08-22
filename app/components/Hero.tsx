@@ -23,7 +23,7 @@ export default function Hero() {
           </h1>
 
           <p className="mt-7 max-w-2xl text-lg leading-8 text-neutral-400">
-            I&apos;m Muhammad Talha, a backend-focused Software Engineer with 2+ years of professional experience building production applications with PHP and Laravel, REST APIs, databases, integrations, testing, background processing, and deployment. I also work across React and Next.js when the product requires full-stack delivery.
+            I&apos;m Muhammad Talha, a backend-focused Software Engineer with 3 years of professional experience building production applications with PHP and Laravel, REST APIs, databases, integrations, testing, background processing, and deployment. I also work across React and Next.js when the product requires full-stack delivery.
           </p>
 
           <div className="mt-10 flex flex-col gap-3 sm:flex-row">
