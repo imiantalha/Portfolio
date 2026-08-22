@@ -3,7 +3,6 @@ import Contact from "./components/Contact";
 import Education from "./components/Education";
 import EngineeringArchitecture from "./components/EngineeringArchitecture";
 import EngineeringEvidence from "./components/EngineeringEvidence";
-import EngineeringHighlights from "./components/EngineeringHighlights";
 import Experience from "./components/Experience";
 import FeaturedProjects from "./components/FeaturedProjects";
 import Footer from "./components/Footer";
@@ -25,7 +24,6 @@ export default function Home() {
         <FeaturedProjects />
         <Experience />
         <Skills />
-        <EngineeringHighlights />
         <EngineeringArchitecture />
         <About />
         <Education />
