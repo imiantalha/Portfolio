@@ -5,19 +5,15 @@ const experiences = [
     company: "MindBlaze Technologies",
     location: "Lahore, Pakistan",
     description:
-      "Working on production software across e-commerce, B2B marketplaces, HR platforms, and enterprise workflow systems, with a focus on backend engineering and full-stack delivery.",
+      "Backend-focused full-stack engineering across e-commerce, B2B marketplaces, HR platforms, and enterprise workflow systems, with responsibility spanning implementation, testing, deployment, debugging, and production support.",
     highlights: [
-      "Build and maintain PHP/Laravel applications and versioned REST APIs for production systems.",
-      "Develop frontend functionality using React, Next.js, and Blade based on project requirements.",
-      "Implement payment, shipping, search, notification, and other third-party integrations, including webhooks.",
-      "Write PHPUnit feature and API tests covering authentication, validation, business workflows, and critical application behavior.",
-      "Use structured Git workflows with feature, bug-fix, hot-fix, development, and main branches, including pull requests, code reviews, cherry-picking, and production hot-fixes.",
-      "Build queues, background jobs, scheduled processes, chunked processing, and reporting workflows for asynchronous and recurring operations.",
-      "Implement application security controls including authorization policies, request validation, CSRF protection, and rate limiting for sensitive operations.",
-      "Investigate production issues by tracing requests, logs, database behavior, API responses, queues, and application execution flow to identify root causes and implement targeted fixes.",
-      "Work with MySQL and external database systems to support business and integration workflows, including query and performance investigation.",
-      "Use Docker for Laravel/PHP development and work with Vercel, Railway, and Nginx environments for deployment, configuration, troubleshooting, and ongoing maintenance.",
-      "Collaborate with clients to understand requirements, translate business workflows into technical solutions, and deliver production features.",
+      "Build and maintain PHP/Laravel applications and versioned REST APIs used by web and mobile clients, with backward compatibility as a key API design concern.",
+      "Implement authentication, RBAC, authorization policies, request validation, CSRF protection, rate limiting, webhooks, and other production application safeguards.",
+      "Write PHPUnit feature and API tests for authentication, validation, business workflows, and critical application behavior, supported by practical Postman verification.",
+      "Build queues, background jobs, scheduled processes, chunked processing, and reporting workflows for asynchronous and resource-intensive operations.",
+      "Investigate production issues across requests, logs, database behavior, API responses, queues, and application flow, including performance work that reduced one API operation from approximately 2–3 seconds to around 0.5 seconds.",
+      "Work with MySQL and external database systems, including query optimization, indexing, multi-database workflows, and business data integrations.",
+      "Use structured Git workflows with feature, bug-fix, hot-fix, development, and main branches, including pull requests, code reviews, cherry-picking, production hot-fixes, Docker-based development, Nginx/Vercel deployment environments, and ongoing maintenance.",
     ],
   },
   {
@@ -26,13 +22,11 @@ const experiences = [
     company: "6th Sense Technologies",
     location: "Hybrid",
     description:
-      "Contributed to the development and maintenance of web applications, building practical experience across backend development, APIs, databases, and business logic.",
+      "Contributed to web application development and maintenance, building practical experience across backend development, APIs, databases, and business logic.",
     highlights: [
       "Developed and maintained PHP/Laravel applications and backend functionality.",
-      "Built REST APIs and implemented application business logic.",
-      "Worked with relational databases and data-driven application workflows.",
-      "Implemented features and improvements based on project requirements.",
-      "Collaborated within development workflows to test, debug, refine, and deliver application functionality.",
+      "Built REST APIs and implemented application business logic against relational databases.",
+      "Implemented features from project requirements and collaborated through testing, debugging, refinement, and delivery workflows.",
     ],
   },
   {
@@ -44,9 +38,8 @@ const experiences = [
       "Started my professional software engineering career by working with PHP and Laravel on real application development.",
     highlights: [
       "Developed backend functionality using PHP and Laravel.",
-      "Worked with databases, models, and application workflows.",
-      "Implemented features under project requirements and development guidance.",
-      "Built practical experience working with real-world software projects and professional development workflows.",
+      "Worked with databases, models, and application workflows under project requirements and development guidance.",
+      "Built practical experience with professional development, testing, debugging, and delivery workflows.",
     ],
   },
 ];
@@ -68,10 +61,10 @@ export default function Experience() {
           </h2>
 
           <p className="mt-6 text-base leading-7 text-neutral-400">
-            My experience has grown from backend development with PHP and
-            Laravel into production engineering across APIs, integrations,
-            business workflows, testing, debugging, deployment, and full-stack
-            applications.
+            My experience has grown from PHP and Laravel development into
+            backend-focused software engineering across APIs, integrations,
+            business workflows, testing, performance, deployment, and production
+            support.
           </p>
         </div>
 
@@ -82,9 +75,7 @@ export default function Experience() {
               className="grid gap-6 border-t border-neutral-800 py-10 lg:grid-cols-[180px_1fr]"
             >
               <div>
-                <p className="text-sm text-neutral-500">
-                  {experience.period}
-                </p>
+                <p className="text-sm text-neutral-500">{experience.period}</p>
               </div>
 
               <div>
@@ -93,12 +84,10 @@ export default function Experience() {
                     <h3 className="text-xl font-semibold text-white">
                       {experience.role}
                     </h3>
-
                     <p className="mt-1 text-sm text-blue-400">
                       {experience.company}
                     </p>
                   </div>
-
                   <span className="text-sm text-neutral-600">
                     {experience.location}
                   </span>

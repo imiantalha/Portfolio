@@ -2,27 +2,30 @@ const highlights = [
   {
     title: "Career Progression",
     description:
-      "Progressed from a PHP / Laravel development internship into professional software engineering roles.",
+      "Progressed from a PHP / Laravel development internship into professional software engineering roles with increasing responsibility for production systems.",
   },
   {
-    title: "Production Experience",
+    title: "Production Ownership",
     description:
-      "Contributed to production systems across e-commerce, B2B marketplaces, HR platforms, and enterprise workflows.",
+      "Contribute across implementation, testing, integrations, deployment, debugging, maintenance, and production support rather than feature development alone.",
   },
   {
-    title: "End-to-End Delivery",
+    title: "Backend-Focused Full Stack",
     description:
-      "Experience working from business requirements and implementation through integrations, refinement, and customer delivery.",
+      "Strongest in PHP/Laravel, APIs, databases, performance, and application engineering, with React and Next.js experience for end-to-end product delivery.",
   },
 ];
 
 export default function Recognition() {
   return (
-    <section className="border-t border-neutral-800 py-24 sm:py-32">
+    <section
+      id="career-highlights"
+      className="border-t border-neutral-800 py-24 sm:py-32"
+    >
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="max-w-3xl">
           <p className="text-sm font-medium uppercase tracking-[0.25em] text-blue-500">
-            Professional Highlights
+            Career Highlights
           </p>
 
           <h2 className="mt-5 text-3xl font-semibold tracking-tight text-white sm:text-4xl">
@@ -32,10 +35,7 @@ export default function Recognition() {
 
         <div className="mt-14 grid gap-px overflow-hidden rounded-2xl border border-neutral-800 bg-neutral-800 md:grid-cols-3">
           {highlights.map((highlight) => (
-            <article
-              key={highlight.title}
-              className="bg-[#0a0a0a] p-7 sm:p-8"
-            >
+            <article key={highlight.title} className="bg-[#0a0a0a] p-7 sm:p-8">
               <h3 className="text-lg font-semibold text-white">
                 {highlight.title}
               </h3>

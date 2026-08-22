@@ -2,7 +2,7 @@ import About from "./components/About";
 import Contact from "./components/Contact";
 import Education from "./components/Education";
 import EngineeringArchitecture from "./components/EngineeringArchitecture";
-import EngineeringHighlights from "./components/EngineeringHighlights";
+import EngineeringEvidence from "./components/EngineeringEvidence";
 import Experience from "./components/Experience";
 import FeaturedProjects from "./components/FeaturedProjects";
 import Footer from "./components/Footer";
@@ -20,12 +20,12 @@ export default function Home() {
       <main id="main-content">
         <Hero />
         <Metrics />
-        <About />
-        <Skills />
-        <EngineeringHighlights />
-        <EngineeringArchitecture />
+        <EngineeringEvidence />
         <FeaturedProjects />
         <Experience />
+        <Skills />
+        <EngineeringArchitecture />
+        <About />
         <Education />
         <Recognition />
         <Contact />
